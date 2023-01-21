@@ -36,9 +36,13 @@ jobs:
     #    github_token: ${{ secrets.GITHUB_TOKEN }}
     #    publish_dir: ./_build/html
     
-    # Push the book's HTML to github-pages
+    # Create github-pages artifact
     - name: Upload GitHub Pages artifact
       uses: actions/upload-pages-artifact@v1.0.7
       with:
         # Path of the directory containing the static assets.
         path: ./_build/html
+    
+    # Deploy artifact
+    - name: Deploy GitHub Pages site
+      uses: actions/deploy-pages@v1.2.3
