@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Software Installation &#8212; Introduction to Mechatronics with</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arm Toolchain" href="sec01/armToolchain.html" />
+    <link rel="prev" title="1.16. Type Casting" href="../chap1/sec16/typeCasting.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Mechatronics with</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Introduction to Mechatronics notes webpage
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Main Content
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap1/summaryOfBasicCCppProgramming.html">
+   1. Summary of Basic C/C++ Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec01/programStructure.html">
+     1.1. Program Structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec02/basicSyntax.html">
+     1.2. Basic Syntax
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec03/dataTypes.html">
+     1.3. Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec04/variables.html">
+     1.4. Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec05/constantsAndLiterals.html">
+     1.5. Constants and Literals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec06/operators.html">
+     1.6. Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec07/decisionMaking.html">
+     1.7. Decision Making
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec08/loops.html">
+     1.8. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec09/functions.html">
+     1.9. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec10/scopeRules.html">
+     1.10. Scope Rules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec11/arrays.html">
+     1.11. Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec12/pointers.html">
+     1.12. Pointers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec13/strings.html">
+     1.13. Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec14/preprocessors.html">
+     1.14. Preprocessors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec15/headerFiles.html">
+     1.15. Header Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap1/sec16/typeCasting.html">
+     1.16. Type Casting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Software Installation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec01/armToolchain.html">
+     Arm Toolchain
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec02/textEditor.html">
+     Text Editor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec03/piPicoSDK.html">
+     Raspberry Pi Pico C/C++ SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec04/helloWorld.html">
+     Hello World!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FappnA/softwareInstallation.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/appnA/softwareInstallation.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Software Installation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="software-installation">
+<h1>Software Installation<a class="headerlink" href="#software-installation" title="Permalink to this headline">#</a></h1>
+<p>Before we go about writing the code for the microcontroller programming, it is important to make sure that everyone can follow along the coding process regardless of the operating system they use. Majority of the PCs or Laptops in today’s time would be running either 1. Windows, 2. MacOS or 3. Linux. Even though the software necessary for microcontroller programming can be set-up in many ways for each operating system, the goal here is to make the process independent of the operating system being used. Upcoming paragraphs discuss how this is achieved for each operating system.</p>
+<hr class="docutils" />
+<p>MacOS and Linux are very similar in operation for the purpose of the microcontroller programming in this book. The small changes necessary to make MacOS behave as expected are provided below.</p>
+<ul>
+<li><p>Open terminal app. Note that <code class="docutils literal notranslate"><span class="pre">zsh</span></code> is being used as the default shell.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="f58ab676-f322-4857-bd1e-65e8b334eed5" name="baaae547-dd2d-41a2-9a14-31c851641dd8" type="radio">
+</input><label class="sd-tab-label" for="f58ab676-f322-4857-bd1e-65e8b334eed5">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/1.png" /></p>
+</div>
+<input id="e258f06f-bdb4-48eb-83c0-7bded31909f6" name="baaae547-dd2d-41a2-9a14-31c851641dd8" type="radio">
+</input><label class="sd-tab-label" for="e258f06f-bdb4-48eb-83c0-7bded31909f6">
+2</label><div class="sd-tab-content docutils">
+<p><img alt="2" src="../_images/2.png" /></p>
+</div>
+<input id="48caaf18-721f-4b97-b3a7-1482f6c4c2ea" name="baaae547-dd2d-41a2-9a14-31c851641dd8" type="radio">
+</input><label class="sd-tab-label" for="48caaf18-721f-4b97-b3a7-1482f6c4c2ea">
+3</label><div class="sd-tab-content docutils">
+<p><img alt="3" src="../_images/3.png" /></p>
+</div>
+<input id="6ac69d74-de35-4271-bc5e-1ab0887098fc" name="baaae547-dd2d-41a2-9a14-31c851641dd8" type="radio">
+</input><label class="sd-tab-label" for="6ac69d74-de35-4271-bc5e-1ab0887098fc">
+4</label><div class="sd-tab-content docutils">
+<p><img alt="4" src="../_images/4.png" /></p>
+</div>
+</div>
+</li>
+<li><p>Type following and hit enter. You may be prompted to enter your password. Note that the <code class="docutils literal notranslate"><span class="pre">%</span></code> represents start of the line, so don’t type it.</p></li>
+</ul>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span>    % chsh -s /bin/bash
+</pre></div>
+</div>
+<ul>
+<li><p>Exit the terminal app and reopen it. Note that it is now using <code class="docutils literal notranslate"><span class="pre">bash</span></code> as the default shell. Also, the prompt, <code class="docutils literal notranslate"><span class="pre">%</span></code> for <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, is now changed to <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="cd2e72b6-8ff5-4e91-b1a6-757531d1a820" name="0ce01890-389c-48fa-980d-880f3e30d301" type="radio">
+</input><label class="sd-tab-label" for="cd2e72b6-8ff5-4e91-b1a6-757531d1a820">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/5.png" /></p>
+</div>
+<input id="012d8e47-6b7b-44a2-8685-119ec108bbd1" name="0ce01890-389c-48fa-980d-880f3e30d301" type="radio">
+</input><label class="sd-tab-label" for="012d8e47-6b7b-44a2-8685-119ec108bbd1">
+2</label><div class="sd-tab-content docutils">
+<p><img alt="2" src="../_images/6.png" /></p>
+</div>
+<input id="5807a1b2-6d62-40f2-ae0b-46eddb4844f5" name="0ce01890-389c-48fa-980d-880f3e30d301" type="radio">
+</input><label class="sd-tab-label" for="5807a1b2-6d62-40f2-ae0b-46eddb4844f5">
+3</label><div class="sd-tab-content docutils">
+<p><img alt="3" src="../_images/7.png" /></p>
+</div>
+<input id="a5b69409-e774-4588-816d-97dded9ec9df" name="0ce01890-389c-48fa-980d-880f3e30d301" type="radio">
+</input><label class="sd-tab-label" for="a5b69409-e774-4588-816d-97dded9ec9df">
+4</label><div class="sd-tab-content docutils">
+<p><img alt="4" src="../_images/8.png" /></p>
+</div>
+</div>
+</li>
+</ul>
+<hr class="docutils" />
+<p>To get Windows to a similar state, a virtual Linux operating system can be installed in it. Windows provides <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/about">WSL</a> for this purpose. A brief installation guide for WSL is provided at <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a>. Following are the step-wise instructions with images to install WSL.</p>
+<ul>
+<li><p>Check the status of hardware virtualization.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="5bd70f28-8243-4cbb-a3f5-e5a60475e9ad" name="d00f70f1-1e37-4fbd-abcf-d6a84c6242a8" type="radio">
+</input><label class="sd-tab-label" for="5bd70f28-8243-4cbb-a3f5-e5a60475e9ad">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/11.png" /></p>
+</div>
+<input id="0dc64aeb-9848-4b1b-895a-ee91ddb93a12" name="d00f70f1-1e37-4fbd-abcf-d6a84c6242a8" type="radio">
+</input><label class="sd-tab-label" for="0dc64aeb-9848-4b1b-895a-ee91ddb93a12">
+2</label><div class="sd-tab-content docutils">
+<p><img alt="2" src="../_images/21.png" /></p>
+</div>
+<input id="51d98182-7f28-41ca-ae9c-b99f9cf1d291" name="d00f70f1-1e37-4fbd-abcf-d6a84c6242a8" type="radio">
+</input><label class="sd-tab-label" for="51d98182-7f28-41ca-ae9c-b99f9cf1d291">
+3</label><div class="sd-tab-content docutils">
+<p><img alt="3" src="../_images/31.png" /></p>
+</div>
+<input id="b7fb9949-edff-4c4e-88ca-fc11ba573977" name="d00f70f1-1e37-4fbd-abcf-d6a84c6242a8" type="radio">
+</input><label class="sd-tab-label" for="b7fb9949-edff-4c4e-88ca-fc11ba573977">
+4</label><div class="sd-tab-content docutils">
+<p><img alt="4" src="../_images/41.png" /></p>
+</div>
+</div>
+</li>
+<li><p>If the hardware virtualization is disabled then follow images given below to boot the computer in BIOS for activating the hardware virtualization. The BIOS menu will look different based on the manufacturer. In the BIOS settings, find the configuration items related to the CPU. These can be under the headings Processor, Chipset, or Northbridge. Enable virtualization; the setting may be called VT-x, AMD-V, SVM, or Vanderpool. Enable Intel VT-d or AMD IOMMU if the options are available. Save your changes and reboot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Contact your TA or instructor if you don’t feel comfortable changing options in your BIOS.</p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="7f2848e6-19eb-4959-8d78-6031de9d0616" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="7f2848e6-19eb-4959-8d78-6031de9d0616">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/12.png" /></p>
+</div>
+<input id="54db8157-beb5-44d3-9503-c9591cf196b2" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="54db8157-beb5-44d3-9503-c9591cf196b2">
+2</label><div class="sd-tab-content docutils">
+<p><img alt="2" src="../_images/22.png" /></p>
+</div>
+<input id="e8bb53c0-872a-42b4-85c6-277073c0991e" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="e8bb53c0-872a-42b4-85c6-277073c0991e">
+3</label><div class="sd-tab-content docutils">
+<p><img alt="3" src="../_images/32.png" /></p>
+</div>
+<input id="412a5191-e037-4fe6-b248-0776c7732b33" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="412a5191-e037-4fe6-b248-0776c7732b33">
+4</label><div class="sd-tab-content docutils">
+<p><img alt="4" src="../_images/4.jpg" /></p>
+</div>
+<input id="cc8ecfec-d587-4b4e-83d4-600e564c0e3f" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="cc8ecfec-d587-4b4e-83d4-600e564c0e3f">
+5</label><div class="sd-tab-content docutils">
+<p><img alt="5" src="../_images/5.jpg" /></p>
+</div>
+<input id="7c779510-3de0-4493-b497-1a675f039222" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="7c779510-3de0-4493-b497-1a675f039222">
+6</label><div class="sd-tab-content docutils">
+<p><img alt="6" src="../_images/6.jpg" /></p>
+</div>
+<input id="cb9fcc6b-8bae-4ab6-af1d-0cf16cb4753b" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="cb9fcc6b-8bae-4ab6-af1d-0cf16cb4753b">
+7</label><div class="sd-tab-content docutils">
+<p><img alt="7" src="../_images/7.jpg" /></p>
+</div>
+<input id="615f68e7-0f83-4770-a7c6-47219b3c2d8b" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="615f68e7-0f83-4770-a7c6-47219b3c2d8b">
+8</label><div class="sd-tab-content docutils">
+<p><img alt="8" src="../_images/8.jpg" /></p>
+</div>
+<input id="1d03dbd3-3aa5-4244-8bd7-99f1d152df26" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="1d03dbd3-3aa5-4244-8bd7-99f1d152df26">
+9</label><div class="sd-tab-content docutils">
+<p><img alt="9" src="../_images/9.jpg" /></p>
+</div>
+<input id="8294104c-f82d-413a-813f-f5a4c765ef7e" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="8294104c-f82d-413a-813f-f5a4c765ef7e">
+10</label><div class="sd-tab-content docutils">
+<p><img alt="10" src="../_images/10.jpg" /></p>
+</div>
+<input id="2333d88e-cc60-4c2f-abd3-92a97dcf7d45" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="2333d88e-cc60-4c2f-abd3-92a97dcf7d45">
+11</label><div class="sd-tab-content docutils">
+<p><img alt="11" src="../_images/11.jpg" /></p>
+</div>
+<input id="a5b97be3-a189-49a9-8f6d-0a71e2d10ff4" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="a5b97be3-a189-49a9-8f6d-0a71e2d10ff4">
+12</label><div class="sd-tab-content docutils">
+<p><img alt="12" src="../_images/12.jpg" /></p>
+</div>
+<input id="2b66a7a8-7942-4734-a78b-8767f0e83dac" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="2b66a7a8-7942-4734-a78b-8767f0e83dac">
+13</label><div class="sd-tab-content docutils">
+<p><img alt="13" src="../_images/13.jpg" /></p>
+</div>
+<input id="ea24dc04-f32c-43ec-b1bd-794809481c9d" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="ea24dc04-f32c-43ec-b1bd-794809481c9d">
+14</label><div class="sd-tab-content docutils">
+<p><img alt="14" src="../_images/14.jpg" /></p>
+</div>
+<input id="46a00f33-62ba-4d2d-b725-8949aef012fe" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="46a00f33-62ba-4d2d-b725-8949aef012fe">
+15</label><div class="sd-tab-content docutils">
+<p><img alt="15" src="../_images/15.jpg" /></p>
+</div>
+<input id="5a9198de-d17b-478a-a617-23de3fb4b5a1" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="5a9198de-d17b-478a-a617-23de3fb4b5a1">
+16</label><div class="sd-tab-content docutils">
+<p><img alt="16" src="../_images/16.png" /></p>
+</div>
+<input id="67dd7577-f7d0-4b6e-a333-97a49783a413" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="67dd7577-f7d0-4b6e-a333-97a49783a413">
+17</label><div class="sd-tab-content docutils">
+<p><img alt="17" src="../_images/17.png" /></p>
+</div>
+<input id="e9e7ceb1-6c3e-42c6-89a1-55d1ba65f553" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="e9e7ceb1-6c3e-42c6-89a1-55d1ba65f553">
+18</label><div class="sd-tab-content docutils">
+<p><img alt="18" src="../_images/18.png" /></p>
+</div>
+<input id="e427ff7d-c4f3-4c8d-8f9e-24d1fdd4e665" name="e5d2f6c6-e390-4e95-a8b5-22613b84178d" type="radio">
+</input><label class="sd-tab-label" for="e427ff7d-c4f3-4c8d-8f9e-24d1fdd4e665">
+19</label><div class="sd-tab-content docutils">
+<p><img alt="19" src="../_images/19.png" /></p>
+</div>
+</div>
+</li>
+<li><p>Check Windows version and build number.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="edd4fbfe-6224-4e1c-a19a-fd69e58c1c42" name="bde6e445-a0f0-408f-8bfe-c328e05771e7" type="radio">
+</input><label class="sd-tab-label" for="edd4fbfe-6224-4e1c-a19a-fd69e58c1c42">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/13.png" /></p>
+</div>
+<input id="83ed3a16-2b48-4431-9523-52c9ebb66f55" name="bde6e445-a0f0-408f-8bfe-c328e05771e7" type="radio">
+</input><label class="sd-tab-label" for="83ed3a16-2b48-4431-9523-52c9ebb66f55">
+2</label><div class="sd-tab-content docutils">
+<p><img alt="2" src="../_images/23.png" /></p>
+</div>
+<input id="65d19570-810e-41bd-a96d-1d9a8b8d445e" name="bde6e445-a0f0-408f-8bfe-c328e05771e7" type="radio">
+</input><label class="sd-tab-label" for="65d19570-810e-41bd-a96d-1d9a8b8d445e">
+3</label><div class="sd-tab-content docutils">
+<p><img alt="3" src="../_images/33.png" /></p>
+</div>
+<input id="446fc3bc-3505-47e8-8de7-5a5b6aa76172" name="bde6e445-a0f0-408f-8bfe-c328e05771e7" type="radio">
+</input><label class="sd-tab-label" for="446fc3bc-3505-47e8-8de7-5a5b6aa76172">
+4</label><div class="sd-tab-content docutils">
+<p><img alt="4" src="../_images/42.png" /></p>
+</div>
+</div>
+</li>
+<li><p>If the installed version is Windows 10 and the build number is less than 19041, then follow steps given in <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install-manual">https://learn.microsoft.com/en-us/windows/wsl/install-manual</a> and then continue to the step for <a class="reference external" href="#windowsInit">Ubuntu initialization</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Contact your TA or instructor if you find the steps given in the link too dificult to follow.</p>
+</div>
+</li>
+<li><p>Open Powershell with administrator privileges.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="f527eb3c-3031-4dc1-ad2a-261a62d1516a" name="a01c4534-b91b-4d0a-80d7-1d9e8ce32487" type="radio">
+</input><label class="sd-tab-label" for="f527eb3c-3031-4dc1-ad2a-261a62d1516a">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/14.png" /></p>
+</div>
+<input id="5c383ed8-27ed-41ea-a6f2-943c03984521" name="a01c4534-b91b-4d0a-80d7-1d9e8ce32487" type="radio">
+</input><label class="sd-tab-label" for="5c383ed8-27ed-41ea-a6f2-943c03984521">
+2</label><div class="sd-tab-content docutils">
+<p><img alt="2" src="../_images/24.png" /></p>
+</div>
+<input id="9df47b39-dd0e-430c-b237-521322ed69a6" name="a01c4534-b91b-4d0a-80d7-1d9e8ce32487" type="radio">
+</input><label class="sd-tab-label" for="9df47b39-dd0e-430c-b237-521322ed69a6">
+3</label><div class="sd-tab-content docutils">
+<p><img alt="3" src="../_images/34.png" /></p>
+</div>
+<input id="048e6d83-23b8-468b-ac04-a4f5c99e6df7" name="a01c4534-b91b-4d0a-80d7-1d9e8ce32487" type="radio">
+</input><label class="sd-tab-label" for="048e6d83-23b8-468b-ac04-a4f5c99e6df7">
+4</label><div class="sd-tab-content docutils">
+<p><img alt="4" src="../_images/43.png" /></p>
+</div>
+</div>
+</li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span></code>. This will enable and install some software components in Windows. It will also install a Linux distribution called Ubuntu in Windows. Windows may ask for the ‘User Access Control’, please allow it. Once the installation is finished, you’ll receive a message as shown below.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="67569883-68c2-42d4-8c10-25527011804f" name="119034ab-185f-4de1-8ef6-bf6d6b84e8e6" type="radio">
+</input><label class="sd-tab-label" for="67569883-68c2-42d4-8c10-25527011804f">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/15.png" /></p>
+</div>
+</div>
+</li>
+<li><p>Close Powershell and restart Windows.</p></li>
+<li><p>A window called ‘Ubuntu’ should automatically open up after the restart. This window may also be called Terminal, Bash, Command Line, etc. Throughout this book, we’ll refer to it as a terminal.</p></li>
+<li><p><a name="windowsInit"></a>Provide desired username and password. Note that the characters you type for the password will not show up. Just type the desired password and then press enter.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="b37bc8d7-a428-49e8-a774-03bd5fc6caf1" name="142250e3-6df1-4b33-9478-86c9c4b51878" type="radio">
+</input><label class="sd-tab-label" for="b37bc8d7-a428-49e8-a774-03bd5fc6caf1">
+1</label><div class="sd-tab-content docutils">
+<p><img alt="1" src="../_images/110.png" /></p>
+</div>
+<input id="89e2889c-836b-406a-8007-0cc68cc72e83" name="142250e3-6df1-4b33-9478-86c9c4b51878" type="radio">
+</input><label class="sd-tab-label" for="89e2889c-836b-406a-8007-0cc68cc72e83">
+2</label><div class="sd-tab-content docutils">
+<p><img alt="2" src="../_images/25.png" /></p>
+</div>
+<input id="e0eca939-375b-451c-bba0-ac073ca853f4" name="142250e3-6df1-4b33-9478-86c9c4b51878" type="radio">
+</input><label class="sd-tab-label" for="e0eca939-375b-451c-bba0-ac073ca853f4">
+3</label><div class="sd-tab-content docutils">
+<p><img alt="3" src="../_images/35.png" /></p>
+</div>
+<input id="a223d780-7474-4d3c-b15c-9a666d66c012" name="142250e3-6df1-4b33-9478-86c9c4b51878" type="radio">
+</input><label class="sd-tab-label" for="a223d780-7474-4d3c-b15c-9a666d66c012">
+4</label><div class="sd-tab-content docutils">
+<p><img alt="4" src="../_images/44.png" /></p>
+</div>
+<input id="d67a4b2c-13f2-45cb-832d-8aec503c627c" name="142250e3-6df1-4b33-9478-86c9c4b51878" type="radio">
+</input><label class="sd-tab-label" for="d67a4b2c-13f2-45cb-832d-8aec503c627c">
+5</label><div class="sd-tab-content docutils">
+<p><img alt="5" src="../_images/51.png" /></p>
+</div>
+</div>
+</li>
+<li><p>Ubuntu is now installed and setup. You can close the window.</p></li>
+</ul>
+<p>The software necessary to develop the C/C++ code for the microcontroller can be installed now. Instructions for installing this software for Raspberry Pi Pico can be found in its <a class="reference external" href="https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf">Getting Started</a> guide. Upcoming sections provide a more detailed version of the same.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./appnA"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../chap1/sec16/typeCasting.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1.16. </span>Type Casting</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="sec01/armToolchain.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arm Toolchain</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Vatsal Asitkumar Joshi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

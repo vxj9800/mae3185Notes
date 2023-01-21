@@ -1,0 +1,2237 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Basics of C/C++ Programming &#8212; Introduction to Mechatronics with</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Software Installation" href="../appnA/softwareInstallation.html" />
+    <link rel="prev" title="Welcome to Introduction to Mechatronics notes webpage" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Mechatronics with</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Introduction to Mechatronics notes webpage
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Main Content
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Basics of C/C++ Programming
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appnA/softwareInstallation.html">
+   1. Software Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown.html">
+   2. Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks.html">
+   3. Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown-notebooks.html">
+   4. Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchap1/basicsOfCCppProgramming.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chap1/basicsOfCCppProgramming.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#program-structure">
+   1.1. Program Structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hello-world-example">
+     1.1.1. Hello World Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-syntax">
+   1.2. Basic Syntax
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokens-in-c">
+     1.2.1. Tokens in C
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#semicolons">
+     1.2.2. Semicolons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     1.2.3. Comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifiers">
+     1.2.4. Identifiers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     1.2.5. Keywords
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#whitespace-in-c">
+     1.2.6. Whitespace in C
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   1.3. Data Types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-types">
+     1.3.1. Integer Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-point-types">
+     1.3.2. Floating-Point Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   1.4. Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-definition-in-c">
+     1.4.1. Variable Definition in C
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constants-and-literals">
+   1.5. Constants and Literals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-literals">
+     1.5.1. Integer Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-point-literals">
+     1.5.2. Floating-point Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#character-literals">
+     1.5.3. Character Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-literals">
+     1.5.4. String Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-constants">
+     1.5.5. Defining Constants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   1.6. Operators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arithmetic-operators">
+     1.6.1. Arithmetic Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relational-operators">
+     1.6.2. Relational Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     1.6.3. Logical Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bitwise-operators">
+     1.6.4. Bitwise Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-operators">
+     1.6.5. Assignment Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operator-precedence">
+     1.6.6. Operator Precedence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-making">
+   1.7. Decision Making
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-else-statement">
+     1.7.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-operators">
+     1.7.2. The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ?
+      </span>
+     </code>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       :
+      </span>
+     </code>
+     operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#switch-statement">
+     1.7.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       switch
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   1.8. Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop">
+     1.8.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loop">
+     1.8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-while-loop">
+     1.8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       do
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-control-statements">
+     1.8.4. Loop Control Statements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loop">
+     1.8.5. Infinite Loop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   1.9. Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-a-function">
+     1.9.1. Defining a Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calling-a-function">
+     1.9.2. Calling a Function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scope-rules">
+   1.10. Scope Rules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#block-scope">
+     1.10.1. Block scope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-scope">
+     1.10.2. File scope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-scopes">
+     1.10.3. Nested scopes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initializing-local-and-global-variables">
+     1.10.4. Initializing Local and Global Variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrays">
+   1.11. Arrays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pointers">
+   1.12. Pointers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   1.13. Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessors">
+   1.14. Preprocessors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-files">
+   1.15. Header Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-casting">
+   1.16. Type Casting
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basics of C/C++ Programming</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#program-structure">
+   1.1. Program Structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hello-world-example">
+     1.1.1. Hello World Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-syntax">
+   1.2. Basic Syntax
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokens-in-c">
+     1.2.1. Tokens in C
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#semicolons">
+     1.2.2. Semicolons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     1.2.3. Comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifiers">
+     1.2.4. Identifiers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords">
+     1.2.5. Keywords
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#whitespace-in-c">
+     1.2.6. Whitespace in C
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   1.3. Data Types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-types">
+     1.3.1. Integer Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-point-types">
+     1.3.2. Floating-Point Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   1.4. Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-definition-in-c">
+     1.4.1. Variable Definition in C
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constants-and-literals">
+   1.5. Constants and Literals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-literals">
+     1.5.1. Integer Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-point-literals">
+     1.5.2. Floating-point Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#character-literals">
+     1.5.3. Character Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-literals">
+     1.5.4. String Literals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-constants">
+     1.5.5. Defining Constants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   1.6. Operators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arithmetic-operators">
+     1.6.1. Arithmetic Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relational-operators">
+     1.6.2. Relational Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     1.6.3. Logical Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bitwise-operators">
+     1.6.4. Bitwise Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-operators">
+     1.6.5. Assignment Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operator-precedence">
+     1.6.6. Operator Precedence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-making">
+   1.7. Decision Making
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-else-statement">
+     1.7.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-operators">
+     1.7.2. The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ?
+      </span>
+     </code>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       :
+      </span>
+     </code>
+     operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#switch-statement">
+     1.7.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       switch
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   1.8. Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop">
+     1.8.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loop">
+     1.8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-while-loop">
+     1.8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       do
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-control-statements">
+     1.8.4. Loop Control Statements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loop">
+     1.8.5. Infinite Loop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   1.9. Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-a-function">
+     1.9.1. Defining a Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calling-a-function">
+     1.9.2. Calling a Function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scope-rules">
+   1.10. Scope Rules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#block-scope">
+     1.10.1. Block scope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-scope">
+     1.10.2. File scope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-scopes">
+     1.10.3. Nested scopes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initializing-local-and-global-variables">
+     1.10.4. Initializing Local and Global Variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrays">
+   1.11. Arrays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pointers">
+   1.12. Pointers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   1.13. Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessors">
+   1.14. Preprocessors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-files">
+   1.15. Header Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-casting">
+   1.16. Type Casting
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-of-c-c-programming">
+<h1><span class="section-number">1. </span>Basics of C/C++ Programming<a class="headerlink" href="#basics-of-c-c-programming" title="Permalink to this headline">#</a></h1>
+<p>This book assumes that students who want to learn mechatronics do know how to write a program in C/C++. Understanding of the basic concepts like preprocessor directive, data types, operators, conditional statements, loops, arrays, etc. will make the codes discussed in this book easy to understand. Thus, this chapter provides a summary of such concepts. Majority of the material discussed in this chapter is derived from <a class="reference external" href="https://www.tutorialspoint.com/cprogramming/c_quick_guide.htm">C - Quick Guide</a>.</p>
+<section id="program-structure">
+<h2><span class="section-number">1.1. </span>Program Structure<a class="headerlink" href="#program-structure" title="Permalink to this headline">#</a></h2>
+<p>Before we study the basic building blocks of the C programming language, let us look at a bare minimum C program structure so that we can take it as a reference in the upcoming chapters.</p>
+<section id="hello-world-example">
+<h3><span class="section-number">1.1.1. </span>Hello World Example<a class="headerlink" href="#hello-world-example" title="Permalink to this headline">#</a></h3>
+<p>A C program basically consists of the following parts,</p>
+<ul class="simple">
+<li><p>Preprocessor Commands</p></li>
+<li><p>Functions</p></li>
+<li><p>Variables</p></li>
+<li><p>Statements &amp; Expressions</p></li>
+<li><p>Comments</p></li>
+</ul>
+<p>Let us look at a simple code that would print the words “Hello World”,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="cm">/* my first program in C */</span><span class="w"></span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Let us take a look at the various parts of the above program,</p>
+<ul class="simple">
+<li><p>The first line of the program <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;stdio.h&gt;</span></code> is a preprocessor command, which tells a C compiler to include stdio.h file before going to actual compilation.</p></li>
+<li><p>The next line <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">main()</span></code> is the main function where the program execution begins.</p></li>
+<li><p>The next line <code class="docutils literal notranslate"><span class="pre">/*...*/</span></code> will be ignored by the compiler and it has been put to add additional comments in the program. So such lines are called comments in the program.</p></li>
+<li><p>The next line <code class="docutils literal notranslate"><span class="pre">printf(...)</span></code> is another function available in C which causes the message “Hello, World!” to be displayed on the screen.</p></li>
+<li><p>The next line <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">0;</span></code> terminates the main() function and returns the value 0.</p></li>
+</ul>
+</section>
+</section>
+<section id="basic-syntax">
+<h2><span class="section-number">1.2. </span>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permalink to this headline">#</a></h2>
+<p>You have seen the basic structure of a C program, so it will be easy to understand other basic building blocks of the C programming language.</p>
+<section id="tokens-in-c">
+<h3><span class="section-number">1.2.1. </span>Tokens in C<a class="headerlink" href="#tokens-in-c" title="Permalink to this headline">#</a></h3>
+<p>A C program consists of various tokens and a token is either a keyword, an identifier, a constant, a string literal, or a symbol. For example, the following C statement consists of five tokens</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The individual tokens are</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span><span class="w"></span>
+<span class="p">(</span><span class="w"></span>
+<span class="s">&quot;Hello, World! </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+<span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="semicolons">
+<h3><span class="section-number">1.2.2. </span>Semicolons<a class="headerlink" href="#semicolons" title="Permalink to this headline">#</a></h3>
+<p>In a C program, the semicolon is a statement terminator. That is, each individual statement must be ended with a semicolon. It indicates the end of one logical entity.</p>
+<p>Given below are two different statements</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="comments">
+<h3><span class="section-number">1.2.3. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h3>
+<p>Comments are like helping text in your C program and they are ignored by the compiler. They start with <code class="docutils literal notranslate"><span class="pre">/*</span></code> and terminate with the characters <code class="docutils literal notranslate"><span class="pre">*/</span></code> as shown below</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="cm">/* my first program in C */</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You cannot have comments within comments and they do not occur within a string or character literals.</p>
+</section>
+<section id="identifiers">
+<h3><span class="section-number">1.2.4. </span>Identifiers<a class="headerlink" href="#identifiers" title="Permalink to this headline">#</a></h3>
+<p>A C identifier is a name used to identify a variable, function, or any other user-defined item. An identifier starts with a letter <code class="docutils literal notranslate"><span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">Z</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">z</span></code>, or an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> followed by zero or more letters, underscores, and digits (<code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>).</p>
+<p>C does not allow punctuation characters such as <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, <code class="docutils literal notranslate"><span class="pre">$</span></code>, and <code class="docutils literal notranslate"><span class="pre">%</span></code> within identifiers. C is a case-sensitive programming language. Thus, <code class="docutils literal notranslate"><span class="pre">Manpower</span></code> and <code class="docutils literal notranslate"><span class="pre">manpower</span></code> are two different identifiers in C. Here are some examples of acceptable identifiers,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mohd</span>       <span class="n">zara</span>    <span class="n">abc</span>   <span class="n">move_name</span>  <span class="n">a_123</span>
+<span class="n">myname50</span>   <span class="n">_temp</span>   <span class="n">j</span>     <span class="n">a23b9</span>      <span class="n">retVal</span>
+</pre></div>
+</div>
+</section>
+<section id="keywords">
+<h3><span class="section-number">1.2.5. </span>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h3>
+<p>The following list shows the reserved words in C. These reserved words may not be used as constants or variables or any other identifier names.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w">        </span><span class="k">else</span><span class="w">        </span><span class="kt">long</span><span class="w">        </span><span class="k">switch</span><span class="w"></span>
+<span class="k">break</span><span class="w">       </span><span class="k">enum</span><span class="w">        </span><span class="nc">register</span><span class="w">    </span><span class="k">typedef</span><span class="w"></span>
+<span class="k">case</span><span class="w">        </span><span class="k">extern</span><span class="w">      </span><span class="k">return</span><span class="w">      </span><span class="k">union</span><span class="w"></span>
+<span class="nc">char</span><span class="w">        </span><span class="kt">float</span><span class="w">       </span><span class="kt">short</span><span class="w">       </span><span class="kt">unsigned</span><span class="w"></span>
+<span class="k">const</span><span class="w">       </span><span class="k">for</span><span class="w">         </span><span class="kt">signed</span><span class="w">      </span><span class="kt">void</span><span class="w"></span>
+<span class="k">continue</span><span class="w">    </span><span class="k">goto</span><span class="w">        </span><span class="k">sizeof</span><span class="w">      </span><span class="k">volatile</span><span class="w"></span>
+<span class="k">default</span><span class="w">     </span><span class="k">if</span><span class="w">          </span><span class="k">static</span><span class="w">      </span><span class="k">while</span><span class="w"></span>
+<span class="k">do</span><span class="w">          </span><span class="kt">int</span><span class="w">         </span><span class="k">struct</span><span class="w">      </span><span class="nc">double</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="whitespace-in-c">
+<h3><span class="section-number">1.2.6. </span>Whitespace in C<a class="headerlink" href="#whitespace-in-c" title="Permalink to this headline">#</a></h3>
+<p>A line containing only whitespace, possibly with a comment, is known as a blank line, and a C compiler totally ignores it.</p>
+<p>Whitespace is the term used in C to describe blanks, tabs, newline characters and comments. Whitespace separates one part of a statement from another and enables the compiler to identify where one element in a statement, such as int, ends and the next element begins. Therefore, in the following statement,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>there must be at least one whitespace character (usually a space) between int and age for the compiler to be able to distinguish them. On the other hand, in the following statement,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apples</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">oranges</span><span class="p">;</span><span class="w">   </span><span class="c1">// get the total fruit</span>
+</pre></div>
+</div>
+<p>no whitespace characters are necessary between <code class="docutils literal notranslate"><span class="pre">fruit</span></code> and <code class="docutils literal notranslate"><span class="pre">=</span></code>, or between <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">apples</span></code>, although you are free to include some if you wish to increase readability.</p>
+</section>
+</section>
+<section id="data-types">
+<h2><span class="section-number">1.3. </span>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
+<p>Data types in c refer to an extensive system used for declaring variables or functions of different types. The type of a variable determines how much space it occupies in storage and how the bit pattern stored is interpreted.</p>
+<p>The types in C can be classified as follows,</p>
+<ul class="simple">
+<li><p><strong>Basic Types</strong> are arithmetic types and are further classified into: (a) integer types and (b) floating-point types.</p></li>
+<li><p><strong>Enumerated types</strong> are again arithmetic types and they are used to define variables that can only assign certain discrete integer values throughout the program.</p></li>
+<li><p><strong>The type void</strong> indicates that no value is available.</p></li>
+<li><p><strong>Derived types</strong> include (a) Pointer types, (b) Array types, (c) Structure types, (d) Union types and (e) Function types.
+The array types and structure types are referred collectively as the aggregate types. The type of a function specifies the type of the function’s return value. We will see the basic types in the following subsections, where as some of the other types will be covered in the upcoming chapters.</p></li>
+</ul>
+<section id="integer-types">
+<h3><span class="section-number">1.3.1. </span>Integer Types<a class="headerlink" href="#integer-types" title="Permalink to this headline">#</a></h3>
+<p>The following table provides the details of standard integer types with their storage sizes and value ranges</p>
+<table class="colwidths-auto table" id="id1">
+<caption><span class="caption-number">Table 1.1 </span><span class="caption-text">Integer Data Types in C Language</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Type</strong></p></th>
+<th class="text-align:center head"><p><strong>Storage size</strong></p></th>
+<th class="text-align:center head"><p><strong>Value range</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td class="text-align:center"><p>1 byte</p></td>
+<td class="text-align:center"><p>-128 to 127 or 0 to 255</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">char</span></code></p></td>
+<td class="text-align:center"><p>1 byte</p></td>
+<td class="text-align:center"><p>0 to 255</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">signed</span> <span class="pre">char</span></code></p></td>
+<td class="text-align:center"><p>1 byte</p></td>
+<td class="text-align:center"><p>-128 to 127</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td class="text-align:center"><p>2 or 4 bytes</p></td>
+<td class="text-align:center"><p>-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">int</span></code></p></td>
+<td class="text-align:center"><p>2 or 4 bytes</p></td>
+<td class="text-align:center"><p>0 to 65,535 or 0 to 4,294,967,295</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">short</span></code></p></td>
+<td class="text-align:center"><p>2 bytes</p></td>
+<td class="text-align:center"><p>-32,768 to 32,767</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">short</span></code></p></td>
+<td class="text-align:center"><p>2 bytes</p></td>
+<td class="text-align:center"><p>0 to 65,535</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td class="text-align:center"><p>8 bytes</p></td>
+<td class="text-align:center"><p>-9223372036854775808 to 9223372036854775807</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span></code></p></td>
+<td class="text-align:center"><p>8 bytes</p></td>
+<td class="text-align:center"><p>0 to 18446744073709551615</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The storage size of some of the basic types can be different based on the machine.</p>
+</div>
+</section>
+<section id="floating-point-types">
+<h3><span class="section-number">1.3.2. </span>Floating-Point Types<a class="headerlink" href="#floating-point-types" title="Permalink to this headline">#</a></h3>
+<p>The following table provide the details of standard floating-point types with storage sizes and value ranges and their precision</p>
+<table class="colwidths-auto table" id="id2">
+<caption><span class="caption-number">Table 1.2 </span><span class="caption-text">Floating-Point Data Types in C Language</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Type</strong></p></th>
+<th class="text-align:center head"><p><strong>Storage size</strong></p></th>
+<th class="text-align:center head"><p><strong>Value range</strong></p></th>
+<th class="text-align:center head"><p><strong>Precision</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td class="text-align:center"><p>4 byte</p></td>
+<td class="text-align:center"><p>1.2E-38 to 3.4E+38</p></td>
+<td class="text-align:center"><p>6 decimal places</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td class="text-align:center"><p>8 byte</p></td>
+<td class="text-align:center"><p>2.3E-308 to 1.7E+308</p></td>
+<td class="text-align:center"><p>15 decimal places</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code></p></td>
+<td class="text-align:center"><p>10 byte</p></td>
+<td class="text-align:center"><p>3.4E-4932 to 1.1E+4932</p></td>
+<td class="text-align:center"><p>19 decimal places</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="variables">
+<h2><span class="section-number">1.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<p>A variable is nothing but a name given to a storage area that our programs can manipulate. Each variable in C has a specific type, which determines the size and layout of the variable’s memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.</p>
+<p>The name of a variable can be composed of letters, digits, and the underscore character. It must begin with either a letter or an underscore. Upper and lowercase letters are distinct because C is case-sensitive.</p>
+<p>Apart from the basic types discussed in the previous section, C programming language also allows to define various other types of variables, which we will cover in subsequent chapters like Enumeration, Pointer, Array, etc. For this chapter, let us study only basic variable types.</p>
+<section id="variable-definition-in-c">
+<h3><span class="section-number">1.4.1. </span>Variable Definition in C<a class="headerlink" href="#variable-definition-in-c" title="Permalink to this headline">#</a></h3>
+<p>A variable definition tells the compiler where and how much storage to create for the variable. A variable definition specifies a data type and contains a list of one or more variables of that type as follows</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">variable_list</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">type</span></code> must be a valid C data type including <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">w_char</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, or any user-defined object; and <code class="docutils literal notranslate"><span class="pre">variable_list</span></code> may consist of one or more identifier names separated by commas. Some valid declarations are shown here,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w">    </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w">   </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span><span class="w"></span>
+<span class="kt">float</span><span class="w">  </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The line <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">k;</span></code> declares and defines the variables <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>, and <code class="docutils literal notranslate"><span class="pre">k</span></code>; which instruct the compiler to create variables named <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> of type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Variables can be initialized (assigned an initial value) in their declaration. The initializer consists of an equal sign followed by a constant expression as follows,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Some examples are,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// definition and initializing d and f.</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">;</span><span class="w">     </span><span class="c1">// the variable x has the value &#39;x&#39;.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="constants-and-literals">
+<h2><span class="section-number">1.5. </span>Constants and Literals<a class="headerlink" href="#constants-and-literals" title="Permalink to this headline">#</a></h2>
+<p>Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called <em>literals</em>.</p>
+<p>Constants can be of any of the basic data types like an integer constant, a floating constant, a character constant, or a string literal.</p>
+<p>Constants are treated just like regular variables except that their values cannot be modified after their definition.</p>
+<section id="integer-literals">
+<h3><span class="section-number">1.5.1. </span>Integer Literals<a class="headerlink" href="#integer-literals" title="Permalink to this headline">#</a></h3>
+<p>An integer literal can be a binary, octal, hexadecimal or decimal constant. A prefix specifies the base or radix: <code class="docutils literal notranslate"><span class="pre">0b</span></code> or <code class="docutils literal notranslate"><span class="pre">0B</span></code> for binary, <code class="docutils literal notranslate"><span class="pre">0</span></code> for octal, <code class="docutils literal notranslate"><span class="pre">0x</span></code> or <code class="docutils literal notranslate"><span class="pre">0X</span></code> for hexadecimal, and nothing for decimal.</p>
+<p>An integer literal can also have a suffix that is a combination of <code class="docutils literal notranslate"><span class="pre">U</span></code> and <code class="docutils literal notranslate"><span class="pre">L</span></code>, for <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> and <code class="docutils literal notranslate"><span class="pre">long</span></code>, respectively. The suffix can be uppercase or lowercase and can be in any order.</p>
+<p>Here are examples of integer literals representing same decimal number, 85,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mi">85</span><span class="w">         </span><span class="cm">/* decimal */</span><span class="w"></span>
+<span class="mo">0125</span><span class="w">       </span><span class="cm">/* octal */</span><span class="w"></span>
+<span class="mh">0x55</span><span class="w">       </span><span class="cm">/* hexadecimal */</span><span class="w"></span>
+<span class="mi">85</span><span class="w">         </span><span class="cm">/* int */</span><span class="w"></span>
+<span class="mi">85u</span><span class="w">        </span><span class="cm">/* unsigned int */</span><span class="w"></span>
+<span class="mf">85l</span><span class="w">        </span><span class="cm">/* long */</span><span class="w"></span>
+<span class="mi">85ul</span><span class="w">       </span><span class="cm">/* unsigned long */</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="floating-point-literals">
+<h3><span class="section-number">1.5.2. </span>Floating-point Literals<a class="headerlink" href="#floating-point-literals" title="Permalink to this headline">#</a></h3>
+<p>A floating-point literal has an integer part, a decimal point, a fractional part, and an exponent part. You can represent floating point literals either in decimal form or exponential form.</p>
+<p>While representing decimal form, you must include the decimal point, the exponent, or both; and while representing exponential form, you must include the integer part, the fractional part, or both. The signed exponent is introduced by <code class="docutils literal notranslate"><span class="pre">e</span></code> or <code class="docutils literal notranslate"><span class="pre">E</span></code>.</p>
+<p>Here are some examples of floating-point literals,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span><span class="w">       </span><span class="cm">/* Legal */</span><span class="w"></span>
+<span class="mf">314159E-5L</span><span class="w">    </span><span class="cm">/* Legal */</span><span class="w"></span>
+<span class="mi">510</span><span class="n">E</span><span class="w">          </span><span class="cm">/* Illegal: incomplete exponent */</span><span class="w"></span>
+<span class="mf">210f</span><span class="w">          </span><span class="cm">/* Illegal: no decimal or exponent */</span><span class="w"></span>
+<span class="p">.</span><span class="n">e55</span><span class="w">          </span><span class="cm">/* Illegal: missing integer or fraction */</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="character-literals">
+<h3><span class="section-number">1.5.3. </span>Character Literals<a class="headerlink" href="#character-literals" title="Permalink to this headline">#</a></h3>
+<p>Character literals are enclosed in single quotes, e.g., <code class="docutils literal notranslate"><span class="pre">'x'</span></code> can be stored in a simple variable of <code class="docutils literal notranslate"><span class="pre">char</span></code> type.</p>
+<p>A character literal can be a plain character (e.g., <code class="docutils literal notranslate"><span class="pre">'x'</span></code>), an escape sequence (e.g., <code class="docutils literal notranslate"><span class="pre">'\t'</span></code>), or a universal character (e.g., <code class="docutils literal notranslate"><span class="pre">'\u02C0'</span></code>). A list of basic character literals and their corresponding decimal values are provided at <a class="reference external" href="https://www.asciitable.com/">https://www.asciitable.com/</a>.</p>
+</section>
+<section id="string-literals">
+<h3><span class="section-number">1.5.4. </span>String Literals<a class="headerlink" href="#string-literals" title="Permalink to this headline">#</a></h3>
+<p>String literals or constants are enclosed in double quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>. A string contains characters that are similar to character literals: plain characters, escape sequences, and universal characters.</p>
+<p>You can break a long line into multiple lines using string literals and separating them using white spaces.</p>
+<p>Here are some examples of string literals. All the three forms are identical strings.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;hello, dear&quot;</span><span class="w"></span>
+
+<span class="s">&quot;hello, \</span>
+<span class="s">dear&quot;</span><span class="w"></span>
+
+<span class="s">&quot;hello, &quot;</span><span class="w"> </span><span class="s">&quot;d&quot;</span><span class="w"> </span><span class="s">&quot;ear&quot;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="defining-constants">
+<h3><span class="section-number">1.5.5. </span>Defining Constants<a class="headerlink" href="#defining-constants" title="Permalink to this headline">#</a></h3>
+<p>There are two simple ways in C to define constants</p>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">#define</span></code> preprocessor directive</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">const</span></code> keyword</p></li>
+</ul>
+<p>Data defined by the <code class="docutils literal notranslate"><span class="pre">#define</span></code> macro definition are preprocessed, so that your entire code can use it. This can free up space and increase compilation times. However, <code class="docutils literal notranslate"><span class="pre">const</span></code> variables are considered variables, and not macro definitions.</p>
+<p>The big advantage of <code class="docutils literal notranslate"><span class="pre">const</span></code> over <code class="docutils literal notranslate"><span class="pre">#define</span></code> is type checking. <code class="docutils literal notranslate"><span class="pre">#defines</span></code> can’t be type checked, so this can cause problems when trying to determine the data type. If the variable is, instead, a constant then we can grab the type of the data that is stored in that constant variable.</p>
+<p>Following code show the usage of both <code class="docutils literal notranslate"><span class="pre">#define</span></code> and <code class="docutils literal notranslate"><span class="pre">const</span></code>,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// macro definition</span>
+<span class="cp">#define X 30</span>
+
+<span class="c1">// global integer constant</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// local ineteger constant</span>
+<span class="w">    </span><span class="k">const</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of X: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">X</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of Y: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">Y</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of Z: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">Z</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="operators">
+<h2><span class="section-number">1.6. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
+<p>An operator is a symbol that tells the compiler to perform specific mathematical or logical functions. C language is rich in built-in operators and provides the following types of operators</p>
+<ul class="simple">
+<li><p>Arithmetic Operators</p></li>
+<li><p>Relational Operators</p></li>
+<li><p>Logical Operators</p></li>
+<li><p>Bitwise Operators</p></li>
+<li><p>Assignment Operators</p></li>
+</ul>
+<section id="arithmetic-operators">
+<h3><span class="section-number">1.6.1. </span>Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this headline">#</a></h3>
+<p>The following table shows all the arithmetic operators supported by the C language. Assume variable A holds 10 and variable B holds 20 then,</p>
+<table class="colwidths-auto table" id="id3">
+<caption><span class="caption-number">Table 1.3 </span><span class="caption-text">Arithmetic Operators</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Operator</strong></p></th>
+<th class="text-align:left head"><p><strong>Description</strong></p></th>
+<th class="text-align:center head"><p><strong>Expression</strong></p></th>
+<th class="text-align:center head"><p><strong>Result</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td class="text-align:left"><p>Adds two operands.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">+</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p>30</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-align:left"><p>Subtracts second operand from the first.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">-</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p>-10</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-align:left"><p>Multiplies both operands.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">*</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p>200</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td class="text-align:left"><p>Divides numerator by de-numerator.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">/</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td class="text-align:left"><p>Modulus Operator and remainder of after an integer division.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">%</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">++</span></code></p></td>
+<td class="text-align:left"><p>Increment operator increases the integer value by one.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A++</span></code></p></td>
+<td class="text-align:center"><p>11</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">--</span></code></p></td>
+<td class="text-align:left"><p>Decrement operator decreases the integer value by one.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A--</span></code></p></td>
+<td class="text-align:center"><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<p>Following code shows the usage of all the arithmetic operators,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A + B = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A - B = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A * B = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A / B = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A % B = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;++A = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">++</span><span class="n">A</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;--A = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">--</span><span class="n">A</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="relational-operators">
+<h3><span class="section-number">1.6.2. </span>Relational Operators<a class="headerlink" href="#relational-operators" title="Permalink to this headline">#</a></h3>
+<p>The following table shows all the relational operators supported by C. Assume variable A holds 10 and variable B holds 20 then,</p>
+<table class="colwidths-auto table" id="id4">
+<caption><span class="caption-number">Table 1.4 </span><span class="caption-text">Relational Operators</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Operator</strong></p></th>
+<th class="text-align:left head"><p><strong>Description</strong></p></th>
+<th class="text-align:center head"><p><strong>Example</strong></p></th>
+<th class="text-align:center head"><p><strong>Result</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td class="text-align:left"><p>Checks if both operands are equal.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">==</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td class="text-align:left"><p>Checks if both operands are not equal.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">!=</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td class="text-align:left"><p>Checks if first operand is greater than the second operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&gt;</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td class="text-align:left"><p>Checks if first operand is less than the second operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&lt;</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td class="text-align:left"><p>Checks if first operand is greater than or equal to the second operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&gt;=</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td class="text-align:left"><p>Checks if first operand is less than or equal to the second operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&lt;=</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Following code shows the usage of all the relational operators,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="w">  </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A == B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &gt; B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &gt;= B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &lt; B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &lt;= B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A != B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="logical-operators">
+<h3><span class="section-number">1.6.3. </span>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">#</a></h3>
+<p>Following table shows all the logical operators supported by C language. Assume variable A holds 1 and variable B holds 0, then</p>
+<table class="colwidths-auto table" id="id5">
+<caption><span class="caption-number">Table 1.5 </span><span class="caption-text">Logical Operators</span><a class="headerlink" href="#id5" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Operator (Name)</strong></p></th>
+<th class="text-align:left head"><p><strong>Description</strong></p></th>
+<th class="text-align:center head"><p><strong>Example</strong></p></th>
+<th class="text-align:center head"><p><strong>Result</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> (AND)</p></td>
+<td class="text-align:left"><p>Returns true only if all the operands are true or non-zero.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&amp;&amp;</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">||</span></code> (OR)</p></td>
+<td class="text-align:left"><p>Returns true if either of the operands is true or non-zero.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">||</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">!</span></code> (NOT)</p></td>
+<td class="text-align:left"><p>Returns true if the operand is false or zero.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">!(A</span> <span class="pre">&amp;&amp;</span> <span class="pre">B)</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Following code shows the usage of the logical operators,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="w">  </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &amp;&amp; B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A || B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;!(A &amp;&amp; B) is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="bitwise-operators">
+<h3><span class="section-number">1.6.4. </span>Bitwise Operators<a class="headerlink" href="#bitwise-operators" title="Permalink to this headline">#</a></h3>
+<p>Bitwise operator works on bits and perform bit-by-bit operation. Since all the information stored in a computer is in binary form, the variable A holding 60 and variable B holding 13 are stored in binary format in the computer’s memory. The binary representation of these numbers is as follows,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00111100</span><span class="w"></span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00001101</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The following table lists the bitwise operators supported by C. Assuming variable A and variable B hold values discussed above then</p>
+<table class="colwidths-auto table" id="id6">
+<caption><span class="caption-number">Table 1.6 </span><span class="caption-text">Bitwise Operators</span><a class="headerlink" href="#id6" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Operator (Name)</strong></p></th>
+<th class="text-align:left head"><p><strong>Description</strong></p></th>
+<th class="text-align:center head"><p><strong>Example</strong></p></th>
+<th class="text-align:center head"><p><strong>Result</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (AND)</p></td>
+<td class="text-align:left"><p>Similar to logical AND on every bit of the two operands.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&amp;</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">=</span> <span class="pre">0b00001100</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">|</span></code> (OR)</p></td>
+<td class="text-align:left"><p>Similar to logical OR on every bit of the two operands.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">|</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">61</span> <span class="pre">=</span> <span class="pre">0b00111101</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">^</span></code> (XOR)</p></td>
+<td class="text-align:left"><p>Operates on every bit of the two operands. The result of XOR is 1 if the two bits are different.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">^</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">49</span> <span class="pre">=</span> <span class="pre">00110001</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">~</span></code> (NOT)</p></td>
+<td class="text-align:left"><p>Inverts all bits of the operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">~A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">-61</span> <span class="pre">=</span> <span class="pre">0b11000011</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> (Left Shift)</p></td>
+<td class="text-align:left"><p>Left shifts the bits of the first operand, the second operand decides the number of places to shift.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&lt;&lt;</span> <span class="pre">2</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">240</span> <span class="pre">=</span> <span class="pre">0b11110000</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> (Right Shift)</p></td>
+<td class="text-align:left"><p>Right shifts the bits of the first operand, the second operand decides the number of places to shift.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&gt;&gt;</span> <span class="pre">2</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">=</span> <span class="pre">0b00001111</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Following code shows the usage of the bitwise operators,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="w">  </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0b00111100</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0b00001101</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &amp; B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A | B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A ^ B is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;~A is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">~</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &lt;&lt; 2 is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A &gt;&gt; 2 is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="assignment-operators">
+<h3><span class="section-number">1.6.5. </span>Assignment Operators<a class="headerlink" href="#assignment-operators" title="Permalink to this headline">#</a></h3>
+<p>There is one basic assignment operator which assigns the value of the expression on the right hand side to the variable on the left hand side. Rest of the assignment operators are similar to the operators discussed previously but are designed for a very specific case, operate on the operand on the left hand side and save the result in the same operand. Assume variable A holds 2, variable B holds 3 and variable C holds 6, then</p>
+<table class="colwidths-auto table" id="id7">
+<caption><span class="caption-number">Table 1.7 </span><span class="caption-text">Assignment Operators</span><a class="headerlink" href="#id7" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Operator</strong></p></th>
+<th class="text-align:center head"><p><strong>Description</strong></p></th>
+<th class="text-align:center head"><p><strong>Example</strong></p></th>
+<th class="text-align:center head"><p><strong>Result</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td class="text-align:center"><p>Assigns values from right side operands to left side operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">A</span> <span class="pre">+</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+=</span></code></p></td>
+<td class="text-align:center"><p>Adds the right operand to the left operand and assign the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">+=</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">+</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">-=</span></code></p></td>
+<td class="text-align:center"><p>Subtracts the right operand from the left operand and assigns the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">-=</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">-</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">*=</span></code></p></td>
+<td class="text-align:center"><p>Multiplies the right operand with the left operand and assigns the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">*=</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">*</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">12</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">/=</span></code></p></td>
+<td class="text-align:center"><p>Divides the left operand with the right operand and assigns the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">/=</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">/</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">%=</span></code></p></td>
+<td class="text-align:center"><p>Takes modulus using two operands and assigns the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">%=</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">%</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;=</span></code></p></td>
+<td class="text-align:center"><p>Left shift the left operand by the number of bits defined by right operand and assigns the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">&lt;&lt;=</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">&lt;&lt;</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">24</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;=</span></code></p></td>
+<td class="text-align:center"><p>Right shift the left operand by the number of bits defined by right operand and assigns the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">&gt;&gt;=</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">&gt;&gt;</span> <span class="pre">A</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&amp;=</span></code></p></td>
+<td class="text-align:center"><p>Bitwise AND the two operands and assign the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">&amp;=</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">&amp;</span> <span class="pre">B</span> <span class="pre">=</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">^=</span></code></p></td>
+<td class="text-align:center"><p>Bitwise XOR the two operands and assign the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">^=</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">^</span> <span class="pre">B</span> <span class="pre">=</span> <span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">|=</span></code></p></td>
+<td class="text-align:center"><p>Bitwise OR the two operands and assign the result to the left operand.</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">|=</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">C</span> <span class="pre">|</span> <span class="pre">B</span> <span class="pre">=</span> <span class="pre">7</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Following code shows the usage of the assignment operators</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of a is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of a is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of a is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of a is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value of a is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="operator-precedence">
+<h3><span class="section-number">1.6.6. </span>Operator Precedence<a class="headerlink" href="#operator-precedence" title="Permalink to this headline">#</a></h3>
+<p>Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.
+For example, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">2;</span></code> here, <code class="docutils literal notranslate"><span class="pre">x</span></code> is assigned <code class="docutils literal notranslate"><span class="pre">13</span></code>, not <code class="docutils literal notranslate"><span class="pre">20</span></code> because operator <code class="docutils literal notranslate"><span class="pre">*</span></code> has a higher precedence than <code class="docutils literal notranslate"><span class="pre">+</span></code>, so the multiplication <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">2</span></code> happens first and then <code class="docutils literal notranslate"><span class="pre">7</span></code> is added into the result.
+Following table shows the operator precedence order where, operators with the highest precedence appear at the top of the table, and those with the lowest appear at the bottom. Within an expression, higher precedence operators will be evaluated first.</p>
+<table class="colwidths-auto table" id="id8">
+<caption><span class="caption-number">Table 1.8 </span><span class="caption-text">Operator Precedence Order</span><a class="headerlink" href="#id8" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><strong>Category</strong></p></th>
+<th class="text-align:center head"><p><strong>Operator</strong></p></th>
+<th class="text-align:center head"><p><strong>Associativity</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Postfix</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">()</span></code> <code class="docutils literal notranslate"><span class="pre">[]</span></code> <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">.</span></code> <code class="docutils literal notranslate"><span class="pre">++</span></code> <code class="docutils literal notranslate"><span class="pre">--</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Unary</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">!</span></code> <code class="docutils literal notranslate"><span class="pre">~</span></code> <code class="docutils literal notranslate"><span class="pre">++</span></code> <code class="docutils literal notranslate"><span class="pre">--</span></code> <code class="docutils literal notranslate"><span class="pre">(type)</span></code> <code class="docutils literal notranslate"><span class="pre">*</span></code> <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> <code class="docutils literal notranslate"><span class="pre">sizeof</span></code></p></td>
+<td class="text-align:center"><p>Right to left</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Multiplicative</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">*</span></code> <code class="docutils literal notranslate"><span class="pre">/</span></code> <code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Additive</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Shift</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Relational</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Equality</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">==</span></code> <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Bitwise AND</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Bitwise XOR</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">^</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Bitwise OR</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">|</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Logical AND</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Logical OR</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">||</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Conditional</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">?</span></code> <code class="docutils literal notranslate"><span class="pre">:</span></code></p></td>
+<td class="text-align:center"><p>Right to left</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Assignment</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">+=</span></code> <code class="docutils literal notranslate"><span class="pre">-=</span></code> <code class="docutils literal notranslate"><span class="pre">*=</span></code> <code class="docutils literal notranslate"><span class="pre">/=</span></code> <code class="docutils literal notranslate"><span class="pre">%=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;&gt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;&lt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&amp;=</span></code> <code class="docutils literal notranslate"><span class="pre">^=</span></code> <code class="docutils literal notranslate"><span class="pre">|=</span></code></p></td>
+<td class="text-align:center"><p>Right to left</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Comma</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">,</span></code></p></td>
+<td class="text-align:center"><p>Left to right</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="decision-making">
+<h2><span class="section-number">1.7. </span>Decision Making<a class="headerlink" href="#decision-making" title="Permalink to this headline">#</a></h2>
+<p>Decision making structures require that the programmer specifies one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be <code class="docutils literal notranslate"><span class="pre">true</span></code>, and optionally, other statements to be executed if the condition is determined to be <code class="docutils literal notranslate"><span class="pre">false</span></code>. Any non-zero and non-null values are assumed as <code class="docutils literal notranslate"><span class="pre">true</span></code>, and zero or <code class="docutils literal notranslate"><span class="pre">null</span></code> values are assumed as <code class="docutils literal notranslate"><span class="pre">false</span></code> values.
+C programming language provides the following tow main types of decision making statements.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">switch</span></code> statement</p></li>
+</ul>
+<section id="if-else-statement">
+<h3><span class="section-number">1.7.1. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> statement<a class="headerlink" href="#if-else-statement" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> statement allows the code inside <code class="docutils literal notranslate"><span class="pre">if</span></code> block to be executed if the given condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>, otherwise the code inside <code class="docutils literal notranslate"><span class="pre">else</span></code> block is executed.</p>
+<p>Following is the syntax of an <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> statement,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// execute statement of if block when</span>
+<span class="w">    </span><span class="c1">// condition is true</span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// execute statement of else block when</span>
+<span class="w">    </span><span class="c1">// condition is false</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Following is an example that uses <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> statement to decide if a variable holds value smaller than 20 or not.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Given value is less than 20.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Given value is greater than 20.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="the-operators">
+<h3><span class="section-number">1.7.2. </span>The <code class="docutils literal notranslate"><span class="pre">?</span></code> <code class="docutils literal notranslate"><span class="pre">:</span></code> operators<a class="headerlink" href="#the-operators" title="Permalink to this headline">#</a></h3>
+<p>Operators <code class="docutils literal notranslate"><span class="pre">?</span></code> and <code class="docutils literal notranslate"><span class="pre">:</span></code> are known as conditional operators which can be used to replace <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> statements. It has the following general form</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Exp1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Exp2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Exp3</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">Exp1</span></code>, <code class="docutils literal notranslate"><span class="pre">Exp2</span></code>, and <code class="docutils literal notranslate"><span class="pre">Exp3</span></code> are expressions. Notice the use and placement of the colon. The result of line above is computed by evaluating <code class="docutils literal notranslate"><span class="pre">Exp1</span></code>. If it is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then <code class="docutils literal notranslate"><span class="pre">Exp2</span></code> is evaluated and its value becomes the result. However, if <code class="docutils literal notranslate"><span class="pre">Exp1</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, then <code class="docutils literal notranslate"><span class="pre">Exp3</span></code> is evaluated and its value becomes the result.</p>
+<p>Following is an example that uses <code class="docutils literal notranslate"><span class="pre">?</span></code> <code class="docutils literal notranslate"><span class="pre">:</span></code> operators to decide if a variable holds value smaller than 20 or not.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Given value is %s than 20.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;less&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;greater&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="switch-statement">
+<h3><span class="section-number">1.7.3. </span><code class="docutils literal notranslate"><span class="pre">switch</span></code> statement<a class="headerlink" href="#switch-statement" title="Permalink to this headline">#</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement allows a variable to be tested for equality against a list of values. Each value is called a <code class="docutils literal notranslate"><span class="pre">case</span></code>, and the variable being switched on is checked for each switch case. Following is the syntax for a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="p">(</span><span class="n">variable</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">expression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="nl">value1</span><span class="w"> </span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="cm">/* optional */</span><span class="w"></span>
+<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="nl">value2</span><span class="w"> </span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="cm">/* optional */</span><span class="w"></span>
+<span class="w">   </span><span class="cm">/* you can have any number of case statements */</span><span class="w"></span>
+<span class="w">   </span><span class="k">default</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="cm">/* Optional */</span><span class="w"></span>
+<span class="w">   </span><span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">break</span></code> in the syntax above is a keyword that is used to stop the execution inside a switch block. It helps to terminate the switch block and break out of it. And, the <code class="docutils literal notranslate"><span class="pre">default</span></code> keyword is used to specify the set of statements to execute if there is no case match. Following code shows the usage of <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">   </span><span class="kt">char</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;B&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">switch</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Excellent!</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;B&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Well done!</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Good!</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;D&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;You passed!</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;F&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Better try again!</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">default</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Invalid grade.</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Your grade is  %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="loops">
+<h2><span class="section-number">1.8. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h2>
+<p>Loops in programming are used to repeat a block of code until the specified condition is met. A loop statement allows programmers to execute a statement or group of statements multiple times without repetition of code.
+There are mainly two types of loops in C Programming:</p>
+<ol class="simple">
+<li><p><strong>Entry Controlled loops</strong> are ones where the test condition is checked before entering the main body of the loop. <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and <code class="docutils literal notranslate"><span class="pre">while</span></code> loop are Entry Controlled loops.</p></li>
+<li><p><strong>Exit Controlled loops</strong> are ones where the test condition is evaluated at the end of the loop body. The loop body will execute at least once, irrespective of whether the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loop is an Exit Controlled loop.</p></li>
+</ol>
+<section id="for-loop">
+<h3><span class="section-number">1.8.1. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> Loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop in C programming is a repetition control structure that allows programmers to write a loop that will be executed a specific number of times. <code class="docutils literal notranslate"><span class="pre">for</span></code> loop enables programmers to perform n number of steps together in a single line. Following is the syntax of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">initialization</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">expression</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//</span>
+<span class="w">    </span><span class="c1">// body of for loop</span>
+<span class="w">    </span><span class="c1">//</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, a loop variable is used to control the loop. First, the loop variable is initialized with some value, then the condition is checked. If the statement is <code class="docutils literal notranslate"><span class="pre">true</span></code> then control will move to the body and the body of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop will be executed. The update expression is executed to update the value of the loop variable. Now the condition is checked again with the new value of the loop variable. These steps will be repeated till the condition expression results to <code class="docutils literal notranslate"><span class="pre">false</span></code>. Following code shows the usage of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w">  </span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="while-loop">
+<h3><span class="section-number">1.8.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> Loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">#</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop does not depend upon the number of iterations. In <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, the number of iterations were known in advance but in the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, the execution is terminated on the basis of the condition expression. If the condition results in a <code class="docutils literal notranslate"><span class="pre">false</span></code> then the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will break, otherwise the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop body is executed. Following is the syntax of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="w"> </span><span class="n">expression</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// body of the while loop</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Following code shows the use of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="do-while-loop">
+<h3><span class="section-number">1.8.3. </span><code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> Loop<a class="headerlink" href="#do-while-loop" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loop is similar to a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop but the only difference is that the <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loop checks the condition at the end of the body. In <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loop, the loop body will execute at least once irrespective of the condition result. Following is the syntax of a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">do</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// body of do-while loop</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="w"> </span><span class="n">expression</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Following code shows the use of a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">do</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="loop-control-statements">
+<h3><span class="section-number">1.8.4. </span>Loop Control Statements<a class="headerlink" href="#loop-control-statements" title="Permalink to this headline">#</a></h3>
+<p>Loop control statements in C programming are used to change execution from its normal sequence. C language supports the following control statements,</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/cpp-break-statement/"><code class="docutils literal notranslate"><span class="pre">break;</span></code></a> terminates the loop or <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement and transfers execution to the statement immediately following the loop or <code class="docutils literal notranslate"><span class="pre">switch</span></code>.</p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/continue-statement-cpp/"><code class="docutils literal notranslate"><span class="pre">continue;</span></code></a> causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/goto-statement-in-c-cpp/"><code class="docutils literal notranslate"><span class="pre">goto</span></code></a> transfers control to the labeled statement.</p></li>
+</ul>
+</section>
+<section id="infinite-loop">
+<h3><span class="section-number">1.8.5. </span>Infinite Loop<a class="headerlink" href="#infinite-loop" title="Permalink to this headline">#</a></h3>
+<p>A loop becomes an infinite loop if a condition never becomes <code class="docutils literal notranslate"><span class="pre">false</span></code>. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is traditionally used for this purpose. Since the three expressions that form the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop are not required, you can make an endless loop by leaving the conditional expression empty.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;This loop will run forever.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>When the conditional expression is absent, it is assumed to be <code class="docutils literal notranslate"><span class="pre">true</span></code>. You can achieve the same result with <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">(true)</span></code>.</p>
+</section>
+</section>
+<section id="functions">
+<h2><span class="section-number">1.9. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
+<p>A function is a group of statements that together perform a task. Every C program has at least one function, which is <code class="docutils literal notranslate"><span class="pre">main()</span></code>, and all the most trivial programs can define additional functions.
+You can divide up your code into separate functions. How you divide up your code among different functions is up to you, but logically the division is such that each function performs a specific task.
+A function declaration tells the compiler about a function’s name, return type, and parameters. A function definition provides the actual body of the function.
+The C standard library provides numerous built-in functions that your program can call. For example, strcat() to concatenate two strings, memcpy() to copy one memory location to another location, and many more functions.
+A function can also be referred as a method or a sub-routine or a procedure, etc.</p>
+<section id="defining-a-function">
+<h3><span class="section-number">1.9.1. </span>Defining a Function<a class="headerlink" href="#defining-a-function" title="Permalink to this headline">#</a></h3>
+<p>The general form of a function definition in C programming language is as follows,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="w"> </span><span class="n">parameter_list</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="c1">// body of the function</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A function definition in C programming consists of a <em>function header</em> and a <em>function body</em>. Here are all the parts of a function,</p>
+<ul class="simple">
+<li><p><strong>Return Type:</strong> A function may return a value. The <code class="docutils literal notranslate"><span class="pre">return_type</span></code> is the data type of the value the function returns. Some functions perform the desired operations without returning a value. In this case, the <code class="docutils literal notranslate"><span class="pre">return_type</span></code> is the keyword <code class="docutils literal notranslate"><span class="pre">void</span></code>.</p></li>
+<li><p><strong>Function Name:</strong> This is the actual name of the function. The function name and the parameter list together constitute the function signature.</p></li>
+<li><p><strong>Parameters:</strong> A parameter is like a placeholder. When a function is invoked, you pass a value to the parameter. The <em>parameter_list</em> refers to the type, order, and number of the parameters of a function. Parameters are optional, i.e. a function may contain no parameters.</p></li>
+<li><p><strong>Function Body:</strong> The function body contains a collection of statements that define what the function does.
+Given below is a function definition for a function called <code class="docutils literal notranslate"><span class="pre">max()</span></code>. This function takes two parameters <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> of <code class="docutils literal notranslate"><span class="pre">int</span></code> type and returns the maximum value between the two,</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">num2</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Generally, a function definition must be provided before a function is called. However, this makes a code less readable. This problem can be resolved by using a function <em>declaration</em>. A function <em>declaration</em> tells the compiler about a function name and how to call the function. The actual body of the function can be defined separately.
+A function declaration has the following parts,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="w"> </span><span class="n">parameter_list</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>For the above defined function max(), the function declaration is as follows,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Parameter names are not important in function declaration only their type is required, so the following is also a valid declaration,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Function declarations are also very helpful when you want to define a function in one source file and call that function in another file. In such case, you should declare the function at the top of the file calling the function.</p>
+</section>
+<section id="calling-a-function">
+<h3><span class="section-number">1.9.2. </span>Calling a Function<a class="headerlink" href="#calling-a-function" title="Permalink to this headline">#</a></h3>
+<p>While creating a C function, you give a definition of what the function has to do. To use a function, you will have to call that function to perform the defined task.
+When a program calls a function, the program control is transferred to the called function. A called function performs a defined task and when its return statement is executed or when its function-ending closing brace is reached, it returns the program control back to the line from where the function was called.
+To call a function, you simply need to pass the required parameters along with the function name, and if the function returns a value, then you can store the returned value. For example,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="w"> </span>
+<span class="cm">/* function declaration */</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Max value is : %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="w"> </span>
+<span class="cm">/* function definition */</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">num2</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="scope-rules">
+<h2><span class="section-number">1.10. </span>Scope Rules<a class="headerlink" href="#scope-rules" title="Permalink to this headline">#</a></h2>
+<p>Each identifier/variable that appears in a C program is visible (i.e. may be used) only in some portion of the source code called its <em>scope</em>. Following two types of C programming scopes will be useful in this book,</p>
+<ul class="simple">
+<li><p>Block scope</p></li>
+<li><p>File scope</p></li>
+</ul>
+<section id="block-scope">
+<h3><span class="section-number">1.10.1. </span>Block scope<a class="headerlink" href="#block-scope" title="Permalink to this headline">#</a></h3>
+<p>The scope of any identifier declared between two consistent braces (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) or as a function parameter, begins at the point of declaration and ends at the end of the block, i.e. at the closing brace <code class="docutils literal notranslate"><span class="pre">}</span></code>, or at the end of the function body.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">                   </span><span class="c1">// scope of the function parameter &#39;n&#39; begins</span>
+<span class="p">{</span><span class="w">                               </span><span class="c1">// the body of the function begins</span>
+<span class="w">    </span><span class="o">++</span><span class="n">n</span><span class="p">;</span><span class="w">                        </span><span class="c1">// &#39;n&#39; is in scope and refers to the function parameter</span>
+<span class="w">    </span><span class="c1">// int n = 2;               // error: cannot redeclare identifier in the same scope</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w">                           </span><span class="c1">// scope of loop-local &#39;n&#39; begins</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w">      </span><span class="c1">// prints 0 1 2 3 4 5 6 7 8 9</span>
+<span class="w">    </span><span class="p">}</span><span class="w">                           </span><span class="c1">// scope of the loop-local &#39;n&#39; ends</span>
+<span class="w">    </span><span class="c1">// the function parameter &#39;n&#39; is back in scope</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w">          </span><span class="c1">// prints the value of the parameter</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// scope of function parameter &#39;n&#39; ends</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// int a = n; // Error: name &#39;n&#39; is not in scope</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="file-scope">
+<h3><span class="section-number">1.10.2. </span>File scope<a class="headerlink" href="#file-scope" title="Permalink to this headline">#</a></h3>
+<p>The scope of any identifier declared outside of any block or function parameter list begins at the point of declaration and ends at the end of the <a class="reference external" href="https://en.wikipedia.org/wiki/Translation_unit_(programming)">translation unit</a>. Such variables are also known as <em>global</em> variables.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="p">;</span><span class="w">          </span><span class="c1">// Global variable &#39;g&#39; is declared</span>
+<span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">     </span><span class="c1">// &#39;a&#39; and &#39;b&#39; has local scope</span>
+<span class="w">  </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span>
+<span class="w">  </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;value of a = %d, b = %d and g = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;g&#39; is accessible since it has file scope.</span>
+<span class="w"> </span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="nested-scopes">
+<h3><span class="section-number">1.10.3. </span>Nested scopes<a class="headerlink" href="#nested-scopes" title="Permalink to this headline">#</a></h3>
+<p>If two different entities named by the same identifier are in scope at the same time, the scopes are nested (no other form of scope overlap is allowed), and the value that appears in the inner scope hides the value that appears in the outer scope,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// the block scope of the name a begins here; hides file-scope a</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">          </span><span class="c1">// the scope of the inner a begins here, outer a is hidden</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w">  </span><span class="c1">// inner a is in scope, prints 2</span>
+<span class="w">    </span><span class="p">}</span><span class="w">                       </span><span class="c1">// the block scope of the inner a ends here</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="initializing-local-and-global-variables">
+<h3><span class="section-number">1.10.4. </span>Initializing Local and Global Variables<a class="headerlink" href="#initializing-local-and-global-variables" title="Permalink to this headline">#</a></h3>
+<p>When a local variable is defined, it is not initialized by the system, you must initialize it yourself. Global variables are initialized automatically to zero or <code class="docutils literal notranslate"><span class="pre">null</span></code> by the system. It is a good programming practice to initialize variables properly, otherwise your program may produce unexpected results, because uninitialized variables will take some garbage value already available at their memory location.</p>
+</section>
+</section>
+<section id="arrays">
+<h2><span class="section-number">1.11. </span>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="pointers">
+<h2><span class="section-number">1.12. </span>Pointers<a class="headerlink" href="#pointers" title="Permalink to this headline">#</a></h2>
+<!-- Discuss passing pointers to a function -->
+</section>
+<section id="strings">
+<h2><span class="section-number">1.13. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="preprocessors">
+<h2><span class="section-number">1.14. </span>Preprocessors<a class="headerlink" href="#preprocessors" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="header-files">
+<h2><span class="section-number">1.15. </span>Header Files<a class="headerlink" href="#header-files" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="type-casting">
+<h2><span class="section-number">1.16. </span>Type Casting<a class="headerlink" href="#type-casting" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chap1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to Introduction to Mechatronics notes webpage</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../appnA/softwareInstallation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Software Installation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Vatsal Asitkumar Joshi<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Main Content
+    numbered: true
+    chapters:
+    - file: chap1/summaryOfBasicCCppProgramming
+      sections:
+      - file: chap1/sec01/programStructure
+      - file: chap1/sec02/basicSyntax
+      - file: chap1/sec03/dataTypes
+      - file: chap1/sec04/variables
+      - file: chap1/sec05/constantsAndLiterals
+      - file: chap1/sec06/operators
+      - file: chap1/sec07/decisionMaking
+      - file: chap1/sec08/loops
+      - file: chap1/sec09/functions
+      - file: chap1/sec10/scopeRules
+      - file: chap1/sec11/arrays
+      - file: chap1/sec12/pointers
+      - file: chap1/sec13/strings
+      - file: chap1/sec14/preprocessors
+      - file: chap1/sec15/headerFiles
+      - file: chap1/sec16/typeCasting
+  - caption: Appendices
+    chapters:
+    - file: appnA/softwareInstallation
+      sections:
+      - file: appnA/sec01/armToolchain
+      - file: appnA/sec02/textEditor
+      - file: appnA/sec03/piPicoSDK
+      - file: appnA/sec04/helloWorld
