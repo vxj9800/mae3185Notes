@@ -1,9 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Introduction to Mechatronics with 
+title: Introduction to Mechatronics
 author: Vatsal Asitkumar Joshi
-logo: logo.png
+copyright: "2023"  # Copyright year to be placed in the footer
+logo: uta-mae.png
 only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
@@ -22,8 +23,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  url: https://github.com/vxj9800/mae3185Notes  # Online location of your book
+  path_to_book: ./_build/html  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -31,3 +32,11 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Added to enable amsmath latex processing
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - dollarmath
