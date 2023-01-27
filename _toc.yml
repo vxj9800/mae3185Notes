@@ -25,6 +25,12 @@ parts:
       - file: chap1/sec14/preprocessors
       - file: chap1/sec15/headerFiles
       - file: chap1/sec16/typeCasting
+    - file: chap2/preliminaries
+      sections:
+      - file: chap2/sec01/numberSystems
+      - file: chap2/sec02/upVSuc
+      - file: chap2/sec03/clocks
+      - file: chap2/sec04/storages
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation
