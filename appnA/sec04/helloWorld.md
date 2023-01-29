@@ -71,7 +71,7 @@ The steps are independent of the operating system from here on.
     ![15](./figs/windows/15.png)
     ```
     ````
-- Copy following in `helloWorld.cpp` file and save it. You can use <kbd>⌃ Control</kbd> + <kbd>S</kbd> (Windows) or <kbd>⌘ Command</kbd> + <kbd>S</kbd> (MacOS) to save a file.
+- Copy following in `helloWorld.cpp` file and save it. You can use <kbd>⌃&#160;Control</kbd> + <kbd>S</kbd> (Windows) or <kbd>⌘&#160;Command</kbd> + <kbd>S</kbd> (MacOS) to save a file.
     ```c++
     #include <stdio.h>
     #include <pico/stdlib.h>
@@ -192,7 +192,7 @@ The steps are independent of the operating system from here on.
     pico_enable_stdio_usb(helloWorld 1)
     target_link_libraries(helloWorld pico_stdlib)
     ```
-- Press <kbd>⌃ Control</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> (Windows) or <kbd>⌘ Command</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> (MacOS), and follow the steps shown in the images below. Note that a `build` folder is created. This folder will contain a `*.uf2` file when the C++ code is compiled properly.
+- Press <kbd>⌃&#160;Control</kbd> + <kbd>⇧&#160;Shift</kbd> + <kbd>P</kbd> (Windows) or <kbd>⌘&#160;Command</kbd> + <kbd>⇧&#160;Shift</kbd> + <kbd>P</kbd> (MacOS), and follow the steps shown in the images below. Note that a `build` folder is created. This folder will contain a `*.uf2` file when the C++ code is compiled properly.
     ````{tab-set}
     ```{tab-item} 1
     ![16](./figs/windows/16.png)
