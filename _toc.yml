@@ -31,6 +31,11 @@ parts:
       - file: chap2/sec02/upVSuc
       - file: chap2/sec03/clocks
       - file: chap2/sec04/storages
+    - file: chap3/theMicrocontrollerAndCodeDevelopment
+      sections:
+      - file: chap3/sec01/raspberryPiPico
+      - file: chap3/sec02/codeDevelopmentProcess
+      - file: chap3/sec03/ucLaptopComm
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation
