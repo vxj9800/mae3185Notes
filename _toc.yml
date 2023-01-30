@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Main Content
+  - caption: Prerequisites
     numbered: true
     chapters:
     - file: chap1/summaryOfBasicCCppProgramming
@@ -25,6 +25,9 @@ parts:
       - file: chap1/sec14/preprocessors
       - file: chap1/sec15/headerFiles
       - file: chap1/sec16/typeCasting
+  - caption: Introduction
+    numbered: true
+    chapters:
     - file: chap2/preliminaries
       sections:
       - file: chap2/sec01/numberSystems
@@ -36,6 +39,14 @@ parts:
       - file: chap3/sec01/raspberryPiPico
       - file: chap3/sec02/codeDevelopmentProcess
       - file: chap3/sec03/ucLaptopComm
+  - caption: Peripherals
+    numbered: true
+    chapters:
+    - file: chap4/gpio
+      sections:
+      - file: chap4/sec01/theory
+      - file: chap4/sec02/libraryFunctions
+      - file: chap4/sec03/codeExamples
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation
