@@ -44,9 +44,14 @@ parts:
     chapters:
     - file: chap4/gpio
       sections:
-      - file: chap4/sec01/theory
+      - file: chap4/sec01/working
       - file: chap4/sec02/libraryFunctions
       - file: chap4/sec03/codeExamples
+    - file: chap5/adc
+      sections:
+      - file: chap5/sec01/working
+      - file: chap5/sec02/libraryFunctions
+      - file: chap5/sec03/codeExamples
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation
