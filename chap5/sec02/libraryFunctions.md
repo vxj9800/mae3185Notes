@@ -17,7 +17,7 @@ Initialize the ADC peripheral on the &mu;C.
 This function initializes a GPIO to work with an ADC input. 
 - Function input `pinNo` can be any GPIO number that supports ADC input, i.e. 26 through 29.
 
-## `void adc_select_input(uint8_t adcIn)`
+## `adc_select_input(uint8_t adcIn)`
 This function prepares an ADC input for reading.
 - Function input `adcIn` can be any ADC input number, i.e. 0 through 5.
 
