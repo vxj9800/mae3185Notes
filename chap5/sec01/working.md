@@ -3,7 +3,7 @@ As stated previously, an ADC measures voltage and converts that measured value i
 
 Any ADC that you may encounter, either it's part of a &mu;C or is an Integrated Circuit (IC) itself, will have a predefined **bit depth**. What this means is that the range of numbers used to represent the measured voltage values can be between 0 - (2<sup>n</sup>-1), where n represents the bit depth. For example, the ADC available on the RP2040 is 12-bit. The numbers this ADC can use must be in range 0 - 4095. Thus, if the ADC outputs number 1123 then it must be reading
 \begin{equation*}
-1123\frac{3.3V}{2^{12} - 1} = 0.905V
+1123 \cdot \frac{3.3V}{2^{12} - 1} = 0.905V
 \end{equation*}
 
 Note that the bit depth and the reference voltage both define the resolution of an ADC. For a 12-bit ADC that measures voltages from 0V-3.3V has a resolution of

@@ -52,6 +52,11 @@ parts:
       - file: chap5/sec01/working
       - file: chap5/sec02/libraryFunctions
       - file: chap5/sec03/codeExamples
+    - file: chap6/pwm
+      sections:
+      - file: chap6/sec01/working
+      - file: chap6/sec02/libraryFunctions
+      - file: chap6/sec03/codeExamples
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation

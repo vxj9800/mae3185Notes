@@ -40,3 +40,19 @@ parse:
     # including those that are enabled by default!
     - amsmath
     - dollarmath
+
+# Add sphinx settings to load javascript libraries
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    mathjax2_config:
+        tex2jax:
+            - inlineMath: [['$', '$'], ['\\(', '\\)']]
+            - processEscapes: True
+            - ignoreClass: document
+            - processClass: math|output_area
+    myst_update_mathjax: false # Needs to be added for Mathjax and Plotly to work nicely together
+    html_js_files:
+      - https://cdn.plot.ly/plotly-2.18.0.min.js # Plotlyjs library to make plots
+    html_extra_path:
+      - ./jsFiles/
