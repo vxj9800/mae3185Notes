@@ -7,56 +7,56 @@ parts:
   - caption: Prerequisites
     numbered: true
     chapters:
-    - file: chap1/summaryOfBasicCCppProgramming
+    - file: chap01/summaryOfBasicCCppProgramming
       sections:
-      - file: chap1/sec01/programStructure
-      - file: chap1/sec02/basicSyntax
-      - file: chap1/sec03/dataTypes
-      - file: chap1/sec04/variables
-      - file: chap1/sec05/constantsAndLiterals
-      - file: chap1/sec06/operators
-      - file: chap1/sec07/decisionMaking
-      - file: chap1/sec08/loops
-      - file: chap1/sec09/functions
-      - file: chap1/sec10/scopeRules
-      - file: chap1/sec11/arrays
-      - file: chap1/sec12/pointers
-      - file: chap1/sec13/strings
-      - file: chap1/sec14/preprocessors
-      - file: chap1/sec15/headerFiles
-      - file: chap1/sec16/typeCasting
+      - file: chap01/sec01/programStructure
+      - file: chap01/sec02/basicSyntax
+      - file: chap01/sec03/dataTypes
+      - file: chap01/sec04/variables
+      - file: chap01/sec05/constantsAndLiterals
+      - file: chap01/sec06/operators
+      - file: chap01/sec07/decisionMaking
+      - file: chap01/sec08/loops
+      - file: chap01/sec09/functions
+      - file: chap01/sec10/scopeRules
+      - file: chap01/sec11/arrays
+      - file: chap01/sec12/pointers
+      - file: chap01/sec13/strings
+      - file: chap01/sec14/preprocessors
+      - file: chap01/sec15/headerFiles
+      - file: chap01/sec16/typeCasting
   - caption: Introduction
     numbered: true
     chapters:
-    - file: chap2/preliminaries
+    - file: chap02/preliminaries
       sections:
-      - file: chap2/sec01/numberSystems
-      - file: chap2/sec02/upVSuc
-      - file: chap2/sec03/clocks
-      - file: chap2/sec04/storages
-    - file: chap3/theMicrocontrollerAndCodeDevelopment
+      - file: chap02/sec01/numberSystems
+      - file: chap02/sec02/upVSuc
+      - file: chap02/sec03/clocks
+      - file: chap02/sec04/storages
+    - file: chap03/theMicrocontrollerAndCodeDevelopment
       sections:
-      - file: chap3/sec01/raspberryPiPico
-      - file: chap3/sec02/codeDevelopmentProcess
-      - file: chap3/sec03/ucLaptopComm
+      - file: chap03/sec01/raspberryPiPico
+      - file: chap03/sec02/codeDevelopmentProcess
+      - file: chap03/sec03/ucLaptopComm
   - caption: Peripherals
     numbered: true
     chapters:
-    - file: chap4/gpio
+    - file: chap04/gpio
       sections:
-      - file: chap4/sec01/working
-      - file: chap4/sec02/libraryFunctions
-      - file: chap4/sec03/codeExamples
-    - file: chap5/adc
+      - file: chap04/sec01/working
+      - file: chap04/sec02/libraryFunctions
+      - file: chap04/sec03/codeExamples
+    - file: chap05/adc
       sections:
-      - file: chap5/sec01/working
-      - file: chap5/sec02/libraryFunctions
-      - file: chap5/sec03/codeExamples
-    - file: chap6/pwm
+      - file: chap05/sec01/working
+      - file: chap05/sec02/libraryFunctions
+      - file: chap05/sec03/codeExamples
+    - file: chap06/pwm
       sections:
-      - file: chap6/sec01/working
-      - file: chap6/sec02/libraryFunctions
-      - file: chap6/sec03/codeExamples
+      - file: chap06/sec01/working
+      - file: chap06/sec02/libraryFunctions
+      - file: chap06/sec03/codeExamples
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation
