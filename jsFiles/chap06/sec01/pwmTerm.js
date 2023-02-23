@@ -1,4 +1,6 @@
-let pwmTermPlot = new anim('pwmTermPlot',pwmTermAnim);
+let pwmTermAnim = new animControl();
+
+let pwmTermPlot = new anim('pwmTermPlot', pwmTermAnim);
 pwmTermPlot.data = [{
     x: [0, 0, 0.35, 0.35, 1, 1, 1.35, 1.35, 2, 2, 2.35, 2.35, 3, 3, 3.35, 3.35, 4, 4], // x axis data
     y: [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1], // y axis data

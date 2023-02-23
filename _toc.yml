@@ -57,6 +57,11 @@ parts:
       - file: chap06/sec01/working
       - file: chap06/sec02/libraryFunctions
       - file: chap06/sec03/codeExamples
+    - file: chap07/uart
+      sections:
+      - file: chap07/sec01/working
+      - file: chap07/sec02/libraryFunctions
+      - file: chap07/sec03/codeExamples
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation

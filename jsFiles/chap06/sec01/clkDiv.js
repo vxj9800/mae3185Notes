@@ -1,4 +1,6 @@
-let clkDivSysClk = new anim('clkDivSysClk',clkDivAnim);
+let clkDivAnim = new animControl();
+
+let clkDivSysClk = new anim('clkDivSysClk', clkDivAnim);
 clkDivSysClk.clkFrq = 125000000;
 clkDivSysClk.dt = 1/125000000/10;
 clkDivSysClk.data = [{

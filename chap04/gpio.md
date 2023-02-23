@@ -1,6 +1,8 @@
 # General Purpose Input Output
 GPIOs are nothing but digital input/output pins, the state of which can be controlled directly by the software running on the processors, or by a number of other peripherals available in the &mu;C. As discussed in previous chapters, the RP2040 &mu;C has 30 GPIOs, out of which 4 can also be used as inputs to the chip's Analogue to Digital Converter (ADC). Each GPIO in RP2040 can perform a specific function of a specific peripheral. Following table lists the function that each GPIO can perform for each peripheral that we may discuss throughout this course. Full table is available [here](https://raspberrypi.github.io/pico-sdk-doxygen/group__hardware__gpio.html).
 ```{table}
+:name: gpio-functions
+
 | GPIO\\Func |    1     |     2     |    3     |   4    |   5   |
 | :--------: | :------: | :-------: | :------: | :----: | :---: |
 |     0      | SPI0 RX  | UART0 TX  | I2C0 SDA | PWM0 A |  SIO  |

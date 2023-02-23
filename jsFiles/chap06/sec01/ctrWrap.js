@@ -1,4 +1,6 @@
-let ctrWrapCtrReg = new anim('ctrWrapCtrReg',ctrWrapAnim);
+let ctrWrapAnim = new animControl();
+
+let ctrWrapCtrReg = new anim('ctrWrapCtrReg', ctrWrapAnim);
 ctrWrapCtrReg.val = 0;
 ctrWrapCtrReg.init = function(){
     this.val = 0;

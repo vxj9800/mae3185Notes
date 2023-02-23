@@ -1,3 +1,5 @@
+let ctrCmpAnim = new animControl();
+
 let ctrCmpCtrReg = new anim('ctrCmpCtrReg', ctrCmpAnim);
 ctrCmpCtrReg.val = 0;
 ctrCmpCtrReg.divClkFrq = 1000000;
