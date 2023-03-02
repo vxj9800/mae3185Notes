@@ -43,7 +43,10 @@ parse:
 
 # Add sphinx settings to load javascript libraries
 sphinx:
+  extra_extensions:
+  - sphinxcontrib.wavedrom
   config:
+    offline_wavedrom_js_path: wavedrom/wavedrom.js # A custom wavedrom file is used because the right click menu causes issues with plotly
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     mathjax2_config:
         tex2jax:
@@ -56,4 +59,4 @@ sphinx:
       - https://cdn.plot.ly/plotly-2.18.0.min.js # Plotlyjs library to make plots
       - https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js # Anime.js library for animations
     html_extra_path:
-      - ./jsFiles/
+      - ./otherFiles/

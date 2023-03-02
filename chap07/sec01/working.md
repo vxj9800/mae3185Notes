@@ -15,7 +15,7 @@ Each UART packet contains a start bit, 5-9 data bits, an optional parity bit and
 ```
 
 - **Start Bit:** The voltage in the wire, connecting a TX pin to an RX pin, is held `HIGH` by the TX pin when there is no communication happening. To indicate the start of data transfer, the voltage in the wire is pulled to `LOW`. When the RX pin detects this change, it starts reading the voltage values.
-- **Data Bits:** These bits are the actual information being transmitted. Based on what each bit is, i.e. `0` or `1`, the voltage in the wire is maintained to 0V or 3.3V for a certain period of time for each bit. There can be 5 to 9 data bits in a packet. And, in most cases, the least significant bit is transmitted first.
+- **Data Bits:** These bits are the actual information being transmitted. Based on what each bit is, i.e. `0` or `1`, the voltage in the wire is maintained to 0V or 3.3V for a certain period of time for each bit. There can be 5 to 9 data bits in a packet. And, in most cases, the least significant bit (LSB) is transmitted first.
 - **Parity Bit:** A parity bit can be used to check the integrity of the data bits being transmitted. There are two types of parity checks, namely even and odd. For even parity check, if the number of `1`s in the data bits is even then the parity bit should be `0` otherwise it should be `1`. To the contrary, for odd parity check, if the number of `1`s in the data bits is odd then the parity bit should be `0` otherwise it should be `1`. Regardless of which type of parity check is used, if the parity bit corresponds to the correct number of `1`s in the data bits then it can be concluded that the transmission of the data bits was error free.
 - **Stop Bits:** These 1 or 2 `HIGH` bits indicate the end of a packet.
 

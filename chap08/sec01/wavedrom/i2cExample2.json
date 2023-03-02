@@ -1,0 +1,24 @@
+{signal: [
+    {
+        node: 'A..B...C...D...E...F...G...H...I...J...K..L',
+        period: 0.5,
+    },
+    {
+        name: 'SDA',
+        wave: '1..0...................1...0...1...0...1...',
+        data: [
+            "7-bit Address",
+            "Read/Write",
+            "Ack/Nack"
+        ],
+        period: 0.5
+    },
+    {
+        name: 'SCL',
+        wave: '1.l.H.l.H.l.H.l.H.l.H.l.H.l.H.l.H.l.H.l.H..',
+        period: 0.5
+    }
+],
+edge: ['B<->J 8-bit Data from Controller', 'J<->K Ack'
+]
+}
