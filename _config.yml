@@ -46,7 +46,11 @@ sphinx:
   extra_extensions:
   - sphinxcontrib.wavedrom
   config:
-    offline_wavedrom_js_path: wavedrom/wavedrom.js # A custom wavedrom file is used because the right click menu causes issues with plotly
+    # A custom wavedrom file is used because the right click menu causes issues with plotly
+    offline_wavedrom_js_path: wavedrom/wavedrom.js
+    offline_skin_js_path: wavedrom/default.js
+
+    # Add MathJax related settings, necessary for it to work well with plotly.js
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     mathjax2_config:
         tex2jax:
@@ -55,8 +59,18 @@ sphinx:
             - ignoreClass: document
             - processClass: math|output_area
     myst_update_mathjax: false # Needs to be added for Mathjax and Plotly to work nicely together
+
+    # Include javascript libraries
     html_js_files:
       - https://cdn.plot.ly/plotly-2.18.0.min.js # Plotlyjs library to make plots
       - https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js # Anime.js library for animations
+
+    # Define the path for chapter and section wise javascript files.
+    # Contents of this folder will be copied directly to _build/html/
     html_extra_path:
       - ./otherFiles/
+    
+    # Add theme specific settings
+    html_theme_options:
+      pygment_light_style: sas
+      pygment_dark_style: github-dark

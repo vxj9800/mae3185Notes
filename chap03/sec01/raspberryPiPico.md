@@ -10,6 +10,7 @@ The RP2040 is a dual core &mu;C with Arm Cortex M0+ architecture. It can run wit
 The Raspberry Pi Pico comes with the RP2040 &mu;C, a 2MB external flash memory, a microUSB port and some power regulation components as shown below. We'll discuss the `BOOTSEL` button in the next section.
 ```{figure} ./figs/piPicoTop.jpg
 ---
+class: p-2
 alt : Raspberry Pi Pico - Top View
 ---
 Top View of the Raspberry Pi Pico
@@ -18,6 +19,7 @@ Top View of the Raspberry Pi Pico
 Note that there are 43 gold-plated pads with holes on the edges of the Pico. Each of these may or may not be a GPIO pin. Thus, we'll refer to these as a 'Physical Pin' while we'll refer to a GPIO pin as a 'Pin'. Following diagram shows the function each physical pin can perform. Such a diagram is known as a 'Pinout Diagram'. A PDF version of this Pinout diagram is available [here](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf).
 ```{figure} ./figs/picoPinout.svg
 ---
+class: p-2
 alt : Raspberry Pi Pico Pinout
 ---
 Pinout Diagram of the Raspberry Pi Pico

@@ -2,23 +2,26 @@
 ```{figure} ./figs/ucOut.svg
 ---
 figclass: margin
+class: p-2
 ---
 GPIO Junction on &mu;C Side vs the Physical Pin
 ```
 As the name suggests, a GPIO can broadly be configured either as an **Input** or as an **Output**. Keep in mind that the terms 'Input' and 'Output' here represent the direction of information transfer instead of the direction of the current flow. To make understanding different configurations easier, consider figure to the right.
 
-In the figure, think of the &EmptySmallSquare; as the physical pin where a wire from some external circuit may be connected. While, the &#x25CF; represents a junction on the &mu;C side. The &mu;C may make different connections at this junction based on the configuration.
+In the figure, think of the &squ; as the physical pin where a wire from some external circuit may be connected. While, the &#x25CF; represents a junction on the &mu;C side. The &mu;C may make different connections at this junction based on the configuration.
 
 ## GPIO Output
 ```{figure} ./figs/ucOutLow.svg
 ---
 figclass: margin
+class: p-2
 ---
 GPIO Config: Output Low
 ```
 ```{figure} ./figs/ucOutHigh.svg
 ---
 figclass: margin
+class: p-2
 ---
 GPIO Config: Output High
 ```
@@ -34,6 +37,7 @@ In this configuration of the GPIO, the &mu;C measures the voltage at the junctio
 ```{figure} ./figs/ucOut.svg
 ---
 figclass: margin
+class: p-2
 ---
 GPIO Config: Input Floating
 ```
@@ -44,6 +48,7 @@ The &mu;C is extremely sensitive to the voltage changes. Thus, if nothing is con
 ```{figure} ./figs/ucOutPd.svg
 ---
 figclass: margin
+class: p-2
 ---
 GPIO Config: Input Pull-Down
 ```
@@ -55,6 +60,7 @@ Pull-Down and Pull-Up input methods work fine only if there is no resistor befor
 ```{figure} ./figs/ucOutPu.svg
 ---
 figclass: margin
+class: p-2
 ---
 GPIO Config: Input Pull-Up
 ```

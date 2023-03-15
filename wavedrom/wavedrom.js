@@ -799,7 +799,7 @@
             y: -(fontSize >> 1),
             width: w,
             height: fontSize,
-            style: "fill:#FFF;"
+            style: "fill:var(--pst-color-background);"
         }],
         ["text", {
             "text-anchor": "middle",
