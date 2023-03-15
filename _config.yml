@@ -4,7 +4,7 @@
 title: Introduction to Mechatronics
 author: Vatsal Asitkumar Joshi
 copyright: "2023"  # Copyright year to be placed in the footer
-logo: logo.png
+logo: _static/logoLight.svg 
 only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
