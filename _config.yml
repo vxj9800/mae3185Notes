@@ -22,16 +22,15 @@ bibtex_bibfiles:
   - references.bib
 
 # Information about where the book exists on the web
-repository:
-  url: https://github.com/vxj9800/mae3185Notes  # Online location of your book
-  path_to_book: ./_build/html  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+# repository:
+#   url: https://github.com/vxj9800/mae3185Notes  # Online location of your book
+#   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-html:
-  use_issues_button: true
-  use_repository_button: true
+# html:
+#   use_repository_button: true
+#   use_issues_button: true
 
 # Added to enable amsmath latex processing
 parse:
@@ -72,5 +71,14 @@ sphinx:
     
     # Add theme specific settings
     html_theme_options:
-      pygment_light_style: sas
-      pygment_dark_style: github-dark
+      # Following content should be defined in the 'repository' region at the top.
+      # However, adding 'html_theme_options' overwrites it somehow.
+      repository_provider: github
+      repository_url: https://github.com/vxj9800/mae3185Notes  # Online location of your book
+      repository_branch: master  # Which branch of the repository should be used when creating links (optional)
+      # Following content should be defined in the 'html' region at the top.
+      # However, adding 'html_theme_options' overwrites it somehow.
+      use_repository_button: true
+      use_issues_button: true
+      pygment_light_style: tango
+      pygment_dark_style: monokai
