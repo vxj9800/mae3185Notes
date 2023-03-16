@@ -67,6 +67,10 @@ parts:
       - file: chap08/sec01/working
       - file: chap08/sec02/libraryFunctions
       - file: chap08/sec03/codeExamples
+    - file: chap09/timer
+      sections:
+      - file: chap09/sec01/libraryFunctions
+      - file: chap09/sec02/codeExamples
   - caption: Appendices
     chapters:
     - file: appnA/softwareInstallation
