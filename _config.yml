@@ -50,19 +50,13 @@ sphinx:
     offline_skin_js_path: wavedrom/default.js
 
     # Add MathJax related settings, necessary for it to work well with plotly.js
-    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    mathjax2_config:
-        tex2jax:
-            - inlineMath: [['$', '$'], ['\\(', '\\)']]
-            - processEscapes: True
-            - ignoreClass: document
-            - processClass: math|output_area
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
     myst_update_mathjax: false # Needs to be added for Mathjax and Plotly to work nicely together
 
     # Include javascript libraries
     html_js_files:
-      - https://cdn.plot.ly/plotly-2.18.0.min.js # Plotlyjs library to make plots
-      - https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js # Anime.js library for animations
+      - https://cdn.plot.ly/plotly-2.24.1.min.js # Plotlyjs library to make plots
+      - https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js # Anime.js library for animations
 
     # Define the path for chapter and section wise javascript files.
     # Contents of this folder will be copied directly to _build/html/
