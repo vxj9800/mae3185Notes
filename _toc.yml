@@ -22,8 +22,7 @@ parts:
       - file: chap01/sec11/arrays
       - file: chap01/sec12/strings
       - file: chap01/sec13/preprocessors
-      - file: chap01/sec14/headerFiles
-      - file: chap01/sec15/typeCasting
+      - file: chap01/sec14/typeCasting
   - caption: Introduction
     numbered: true
     chapters:
