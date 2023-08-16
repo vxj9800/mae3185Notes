@@ -33,7 +33,7 @@ This section explains how the software installed so far can be used to compile a
 
 ## MacOS
 - Create a folder with any name you like on the desktop.
-- Follow the images below to open it in VSCode. The name for the folder in my case is `blink`. Note that the bottom accent color of VSCode changes from purple to blue.
+- Follow the images below to open it in VSCode. The name for the folder in my case is `testCode`.
     ````{tab-set}
     ```{tab-item} 1
     ![6](./figs/mac/6.png)
