@@ -20,9 +20,9 @@ MacOS and Linux are very similar in operation for the purpose of the microcontro
     ```
     ````
 - Type following and hit enter. You may be prompted to enter your password. Note that the `%` represents start of the line, so don't type it.
-```zsh
+    ```zsh
     % chsh -s /bin/bash
-```
+    ```
 - Exit the terminal app and reopen it. Note that it is now using `bash` as the default shell. Also, the prompt, `%` for `zsh`, is now changed to `$`.
     ````{tab-set}
     ```{tab-item} 1

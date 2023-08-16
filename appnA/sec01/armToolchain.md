@@ -17,7 +17,7 @@ A toolchain is a set of programming tools, like a compiler, linker, debugger, et
     ![4](./figs/ubuntu/openTerminal/4.png)
     ```
     ````
-- Enter following one line at a time to install . The `$` sign represents the start of the line so don't include it. You may need to enter the password.
+- Enter following one line at a time to install. The `$` sign represents the start of the line so don't include it. You may need to enter the password.
     ```bash
     $ sudo apt update
     $ sudo apt upgrade
@@ -61,7 +61,7 @@ A toolchain is a set of programming tools, like a compiler, linker, debugger, et
     ```bash
     $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     ```
-- Follow the images below to add Homebrew to the `PATH` enironment.
+- Once 'Homebrew' is installed, it may ask you to perform some extra steps. Generally, these steps correspond to adding 'Homebrew' to the `PATH` environment. Following images show the steps I was asked to perform.
     ````{tab-set}
     ```{tab-item} 1
     ![1](./figs/mac/brewExportPath/1.png)
@@ -72,18 +72,11 @@ A toolchain is a set of programming tools, like a compiler, linker, debugger, et
     ```{tab-item} 3
     ![3](./figs/mac/brewExportPath/3.png)
     ```
-    ```{tab-item} 4
-    ![4](./figs/mac/brewExportPath/4.png)
-    ```
-    ```{tab-item} 5
-    ![5](./figs/mac/brewExportPath/5.png)
-    ```
     ````
 - Finally, enter following commands in the terminal app to install the 'Embedded Toolchain for Arm'.
     ```bash
     $ brew install cmake
-    $ brew tap ArmMbed/homebrew-formulae
-    $ brew install arm-none-eabi-gcc
+    $ brew install gcc-arm-embedded
     ```
 - Restart your MacBook.
 Note that [CMake](https://cmake.org/) was also installed along with the Arm toolchain. [CMake](https://cmake.org/) will take care of calling all the necessary programs, from the toolchain, to generate a binary file that will run on the microcontroller.

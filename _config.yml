@@ -53,6 +53,10 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
     myst_update_mathjax: false # Needs to be added for Mathjax and Plotly to work nicely together
 
+    # Make code-block copy button not copy console prompts
+    copybutton_prompt_text: 'r">>> |\.\.\. |\$ |\% |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "'
+    copybutton_prompt_is_regexp: True
+
     # Include javascript libraries
     html_js_files:
       - https://cdn.plot.ly/plotly-2.24.1.min.js # Plotlyjs library to make plots
