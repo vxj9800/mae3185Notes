@@ -4,7 +4,7 @@ Everyone nowadays have at least one computer with them, it's either the smartpho
 ```{figure} ./figs/rp2040.png
 ---
 alt : RP2040
-figclass : margin
+scale : 75
 ---
 &mu;C with different functional blocks on the same chip
 ```
