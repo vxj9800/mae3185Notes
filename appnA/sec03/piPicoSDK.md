@@ -1,7 +1,7 @@
 # Raspberry Pi Pico C/C++ SDK
 This SDK (Software Development Kit) contains a large collection of libraries and helping function that helps writing a more manageable and an easy-to-understand code. The steps to install this SDK are as follows.
 - Open terminal (WSL, Linux or Mac) and type following one line at a time.
-```bash
+    ```bash
     $ cd ~/
     $ mkdir pico
     $ cd pico
@@ -9,4 +9,4 @@ This SDK (Software Development Kit) contains a large collection of libraries and
     $ cd pico-sdk
     $ git submodule update --init
     $ exit
-```
+    ```
