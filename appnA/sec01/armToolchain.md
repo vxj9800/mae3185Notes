@@ -1,32 +1,8 @@
 # Arm Toolchain
-A toolchain is a set of programming tools, like a compiler, linker, debugger, etc., that facilitate development of programs written for the same or different hardware. The Raspberry Pi Pico has RP2040 onboard which is a microcontroller based on Arm Cortex M0+ architecture. The detailed steps for installing [GNU Embedded Toolchain for Arm](https://developer.arm.com/downloads/-/gnu-rm) in each operating system are as follows.
-
-## Windows/Linux
-- Open Ubuntu terminal.
-    ````{tab-set}
-    ```{tab-item} 1
-    ![1](./figs/ubuntu/openTerminal/1.png)
-    ```
-    ```{tab-item} 2
-    ![2](./figs/ubuntu/openTerminal/2.png)
-    ```
-    ```{tab-item} 3
-    ![3](./figs/ubuntu/openTerminal/3.png)
-    ```
-    ```{tab-item} 4
-    ![4](./figs/ubuntu/openTerminal/4.png)
-    ```
-    ````
-- Enter following one line at a time to install. The `$` sign represents the start of the line so don't include it. You may need to enter the password.
-    ```bash
-    $ sudo apt update
-    $ sudo apt upgrade
-    $ sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
-    $ exit
-    ```
+A toolchain is a set of programming tools, like a compiler, linker, debugger, etc., that facilitate development of programs written for the same or different hardware. The Raspberry Pi Pico has RP2040 onboard which is a microcontroller based on Arm Cortex M0+ architecture. The detailed steps for installing [GNU Embedded Toolchain for Arm](https://developer.arm.com/downloads/-/gnu-rm) in each operating system are provided below. Note that [CMake](https://cmake.org/) will also be installed along with the Arm toolchain. [CMake](https://cmake.org/) will take care of calling all the necessary programs, from the toolchain, to generate a binary file that will run on the microcontroller.
 
 ## MacOS
-- Open terminal app.
+- Open the terminal.
     ````{tab-set}
     ```{tab-item} 1
     ![1](./figs/mac/openTerminal/1.png)
@@ -57,7 +33,7 @@ A toolchain is a set of programming tools, like a compiler, linker, debugger, et
     ```bash
     $ /usr/sbin/softwareupdate --install-rosetta --agree-to-license
     ```
-- Install 'Xcode Command Line Tools' and 'Homebrew' by entering following command in the terminal. You may be prompted to provide password and press enter some point.
+- Install 'Xcode Command Line Tools' and 'Homebrew' by entering following command in the terminal. The system may ask you to type your password and press <kbd>↩&#160;Return</kbd> at some point.
     ```bash
     $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     ```
@@ -73,10 +49,33 @@ A toolchain is a set of programming tools, like a compiler, linker, debugger, et
     ![3](./figs/mac/brewExportPath/3.png)
     ```
     ````
-- Finally, enter following commands in the terminal app to install the 'Embedded Toolchain for Arm'.
+- Close the terminal and reopen it.
+- Enter following commands in the terminal app to install the 'Embedded Toolchain for Arm' and 'CMake'.
     ```bash
     $ brew install cmake
     $ brew install gcc-arm-embedded
     ```
 - Restart your MacBook.
-Note that [CMake](https://cmake.org/) was also installed along with the Arm toolchain. [CMake](https://cmake.org/) will take care of calling all the necessary programs, from the toolchain, to generate a binary file that will run on the microcontroller.
+
+## Windows/Linux
+- Open Ubuntu terminal.
+    ````{tab-set}
+    ```{tab-item} 1
+    ![1](./figs/windows/openTerminal/1.png)
+    ```
+    ```{tab-item} 2
+    ![2](./figs/windows/openTerminal/2.png)
+    ```
+    ```{tab-item} 3
+    ![3](./figs/windows/openTerminal/3.png)
+    ```
+    ```{tab-item} 4
+    ![4](./figs/windows/openTerminal/4.png)
+    ```
+    ````
+- Enter following commands to install the 'Arm Toolchain' and 'CMake'. Note that the `$` symbol, also called a 'Prompt', represents start of the line, so don't type it. The system may ask you to type your password and press <kbd>⏎&#160;Enter</kbd> at some point.
+    ```bash
+    $ sudo apt update
+    $ sudo apt upgrade
+    $ sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+    ```

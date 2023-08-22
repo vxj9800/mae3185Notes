@@ -1,77 +1,87 @@
 # Hello World!
 This section explains how the software installed so far can be used to compile a code for the microcontroller.
 
-## Windows/Linux
-- Create a folder with any name you like on the desktop.
-- Open that folder. Follow the images below to open it in VSCode.
-    ````{tab-set}
-    ```{tab-item} 1
-    ![6](./figs/windows/6.png)
-    ```
-    ```{tab-item} 2
-    ![7](./figs/windows/7.png)
-    ```
-    ```{tab-item} 3
-    ![8](./figs/windows/8.png)
-    ```
-    ```{tab-item} 4
-    ![9](./figs/windows/9.png)
-    ```
-    ````
-- Reopen the folder in WSL. Thus, you'll have access to the Ubuntu linux terminal from VSCode. Note that once you reopen folder in VSCode with WSL, you'll see `WSL:Ubuntu` written in the bottom left green colored area.
-    ````{tab-set}
-    ```{tab-item} 1
-    ![10](./figs/windows/10.png)
-    ```
-    ```{tab-item} 2
-    ![11](./figs/windows/11.png)
-    ```
-    ```{tab-item} 3
-    ![12](./figs/windows/12.png)
-    ```
-    ````
-
 ## MacOS
 - Create a folder with any name you like on the desktop.
-- Follow the images below to open it in VSCode. The name for the folder in my case is `testCode`.
+- Follow the images below to open it in VSCode. The name of the folder in my case is `testCode`.
     ````{tab-set}
     ```{tab-item} 1
-    ![6](./figs/mac/6.png)
+    ![1](./figs/mac/openFolderInVSCode/1.png)
     ```
     ```{tab-item} 2
-    ![7](./figs/mac/7.png)
+    ![2](./figs/mac/openFolderInVSCode/2.png)
     ```
     ```{tab-item} 3
-    ![8](./figs/mac/8.png)
+    ![3](./figs/mac/openFolderInVSCode/3.png)
     ```
     ```{tab-item} 4
-    ![9](./figs/mac/9.png)
+    ![4](./figs/mac/openFolderInVSCode/4.png)
     ```
     ```{tab-item} 5
-    ![10](./figs/mac/10.png)
+    ![5](./figs/mac/openFolderInVSCode/5.png)
     ```
     ```{tab-item} 6
-    ![11](./figs/mac/11.png)
+    ![6](./figs/mac/openFolderInVSCode/6.png)
     ```
     ```{tab-item} 7
-    ![12](./figs/mac/12.png)
+    ![7](./figs/mac/openFolderInVSCode/7.png)
     ```
     ````
+- Follow the steps for [compiling the code](compileCode).
 
-The steps are independent of the operating system from here on.
-- Create three files with names `helloWorld.cpp`, `pico_sdk_import.cmake` and `CMakeLists.txt`. Make sure to create `CMakeLists.txt` with correct case, i.e. capital or small. Follwoing images show steps to create a file through VSCode.
+## Windows/Linux
+- Create a folder with any name you like on the desktop.
+- Follow the images below to open it in VSCode. The name of the folder in my case is `testCode`.
     ````{tab-set}
     ```{tab-item} 1
-    ![13](./figs/windows/13.png)
+    ![1](./figs/windows/openFolderInVSCode/1.png)
     ```
     ```{tab-item} 2
-    ![14](./figs/windows/14.png)
+    ![2](./figs/windows/openFolderInVSCode/2.png)
     ```
     ```{tab-item} 3
-    ![15](./figs/windows/15.png)
+    ![3](./figs/windows/openFolderInVSCode/3.png)
+    ```
+    ```{tab-item} 4
+    ![4](./figs/windows/openFolderInVSCode/4.png)
     ```
     ````
-- Copy following in `helloWorld.cpp` file and save it. You can use <kbd>⌃&#160;Control</kbd> + <kbd>S</kbd> (Windows) or <kbd>⌘&#160;Command</kbd> + <kbd>S</kbd> (MacOS) to save a file.
+- Press <kbd>⌃&#160;Control</kbd> + <kbd>⇧&#160;Shift</kbd> + <kbd>P</kbd> to open the command palette in VSCode and follow the steps shown in the images below to reopen the folder in WSL. Thus, you'll have access to the 'Arm Toolchain' and 'CMake' from VSCode.
+    ````{tab-set}
+    ```{tab-item} 1
+    ![1](./figs/windows/reopenInWSL/1.png)
+    ```
+    ```{tab-item} 2
+    ![2](./figs/windows/reopenInWSL/2.png)
+    ```
+    ```{tab-item} 3
+    ![3](./figs/windows/reopenInWSL/3.png)
+    ```
+    ```{tab-item} 4
+    ![4](./figs/windows/reopenInWSL/4.png)
+    ```
+    ````
+- Follow the steps for [compiling the code](compileCode).
+
+(compileCode)=
+## Compile Code
+The steps are independent of the operating system from here on.
+- Create three files with names `helloWorld.c`, `pico_sdk_import.cmake` and `CMakeLists.txt`. Make sure to create these files with correct case, i.e. upper or lower. Following images show steps for creating a file through VSCode.
+    ````{tab-set}
+    ```{tab-item} 1
+    ![1](./figs/compileCode/createFiles/1.png)
+    ```
+    ```{tab-item} 2
+    ![2](./figs/compileCode/createFiles/2.png)
+    ```
+    ```{tab-item} 3
+    ![3](./figs/compileCode/createFiles/3.png)
+    ```
+    ```{tab-item} 4
+    ![4](./figs/compileCode/createFiles/4.png)
+    ```
+    ````
+- Copy following in `helloWorld.c` file and save it. You can use <kbd>⌃&#160;Control</kbd> + <kbd>S</kbd> (Windows) or <kbd>⌘&#160;Command</kbd> + <kbd>S</kbd> (MacOS) to save a file.
     ```c++
     #include <stdio.h>
     #include <pico/stdlib.h>
@@ -185,34 +195,40 @@ The steps are independent of the operating system from here on.
     pico_sdk_init()
 
     add_executable(helloWorld
-    helloWorld.cpp
+        helloWorld.c
     )
-    pico_add_extra_outputs(helloWorld)
 
     pico_enable_stdio_usb(helloWorld 1)
+    pico_enable_stdio_uart(helloWorld 0)
+
+    pico_add_extra_outputs(helloWorld)
     target_link_libraries(helloWorld pico_stdlib)
     ```
-- Press <kbd>⌃&#160;Control</kbd> + <kbd>⇧&#160;Shift</kbd> + <kbd>P</kbd> (Windows) or <kbd>⌘&#160;Command</kbd> + <kbd>⇧&#160;Shift</kbd> + <kbd>P</kbd> (MacOS), and follow the steps shown in the images below. Note that a `build` folder is created. This folder will contain a `*.uf2` file when the C++ code is compiled properly.
+- Press <kbd>⌃&#160;Control</kbd> + <kbd>⇧&#160;Shift</kbd> + <kbd>P</kbd> (Windows) or <kbd>⌘&#160;Command</kbd> + <kbd>⇧&#160;Shift</kbd> + <kbd>P</kbd> (MacOS) to open the command palette in VSCode. Follow the steps shown in the images below to configure CMake for this folder.
     ````{tab-set}
     ```{tab-item} 1
-    ![16](./figs/windows/16.png)
+    ![1](./figs/compileCode/configureCMake/1.png)
     ```
     ```{tab-item} 2
-    ![17](./figs/windows/17.png)
+    ![2](./figs/compileCode/configureCMake/2.png)
     ```
     ```{tab-item} 3
-    ![18](./figs/windows/18.png)
+    ![3](./figs/compileCode/configureCMake/3.png)
     ```
     ```{tab-item} 4
-    ![19](./figs/windows/19.png)
-    ```
-    ```{tab-item} 5
-    ![20](./figs/windows/20.png)
-    ```
-    ```{tab-item} 6
-    ![21](./figs/windows/21.png)
-    ```
-    ```{tab-item} 7
-    ![22](./figs/windows/22.png)
+    ![4](./figs/compileCode/configureCMake/4.png)
     ```
     ````
+- You will see a <kbd>&#x2699;&#160;Build</kbd> button at the bottom strip and a folder named 'build' once CMake is configured correctly. You can click on the <kbd>&#x2699;&#160;Build</kbd> button to compile the `.c` code. After building completes, the 'build' folder will contain a `.uf2` file if the `.c` code is compiled properly.
+    ````{tab-set}
+    ```{tab-item} 1
+    ![1](./figs/compileCode/buildCode/1.png)
+    ```
+    ```{tab-item} 2
+    ![2](./figs/compileCode/buildCode/2.png)
+    ```
+    ```{tab-item} 3
+    ![3](./figs/compileCode/buildCode/3.png)
+    ```
+    ````
+- Hurray!!! You have compiled your first code for this class.
