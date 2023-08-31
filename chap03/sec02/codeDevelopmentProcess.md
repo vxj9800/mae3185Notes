@@ -5,11 +5,11 @@ project_folder
 ├── build
 │   └── Files compiled by cmake
 ├── CMakeLists.txt
-├── *.cpp
+├── *.c
 └── pico_sdk_import.cmake
 ```
 Each of these files contain following information,
-- **`*.cpp`** contains the code/program that will be compiled and will eventually run on the &mu;C.
+- **`*.c`** contains the code/program that will be compiled and will eventually run on the &mu;C.
 - **`pico_sdk_import.cmake`** is available in the 'Raspberry Pi Pico C/C++ SDK'. It contains helper functions specific to the RP2040 &mu;C that can be used inside `CMakeLists.txt` to facilitate the compilation process.
 - **`CMakeLists.txt`** is used by `cmake` to discover source files, determine what kind of output files to generate, compile the code, etc.
 
@@ -49,15 +49,19 @@ set(CMAKE_C_STANDARD 11)                        # Specify what C standard to fol
 set(CMAKE_CXX_STANDARD 17)                      # Specify what C++ standard to follow
 pico_sdk_init()                                 # Initialize necessary components of the SDK
 
-add_executable(myProject *.cpp)                 # This is where the name of the C/C++ file will go.
+add_executable(myProject                        # This is where the name of the C/C++ file will go.
+*.c
+)
 pico_add_extra_outputs(myProject)               # Tell cmake to create a UF2 file
 
 pico_enable_stdio_usb(myProject 1)              # Configures USB as the 'Standard Input Output'
+pico_enable_stdio_uart(myProject 0)             # Don't configure UART as the 'Standard Input Output'
+
 target_link_libraries(myProject pico_stdlib)    # Link libraries that are used in this project
 ```
 Most of the content in `CMakeLists.txt` will stay the same for all the project folders you may create in this course. Following are the lines that may change,
 - `project(myProject C CXX ASM)`: This is where you provide a name for your project. This name will also be the name of the `.uf2` file that gets generated inside the 'build' folder after the compilation process. Note that the project name, i.e. `myProject` in this case, is used at multiple places throughout the file. So, if you are changing it here then it needs to be changed everywhere.
-- `add_executable(myProject *.cpp)`: You'll put the name of the C/C++ file in your project folder in place of `*.cpp`. The name of the C/C++ file can be anything.
+- `add_executable(myProject *.c)`: You'll put the name of the C/C++ file in your project folder in place of `*.c`. The name of the C/C++ file can be anything.
 - `target_link_libraries(myProject pico_stdlib)`: This is where you'll specify what libraries from 'Raspberry Pi Pico C/C++ SDK' are being used in this project. In this case, the C/C++ file includes `pico/stdlib.h`. Thus, the `CMakeLists.txt` file contains `pico_stdlib`. Note the replacement of `/` with `_` and the omission of `.h`. As another example, if the C/C++ file included `hardware/pwm.h`, then we'd put `hardware_pwm` in the `CMakeLists.txt` file.
 
 Starting next chapter, we'll discuss different peripherals available in the &mu;C. Thus, you'll have to add the libraries for the specific peripheral you might be working on in the C/C++ file and the `CMakeLists.txt` file, and you'll be all set to use the functions available in that library. These notes will discuss some important functions for each peripheral. However, if you want to know more about the functions available in a specific library, then you can always look at the [SDK documentation](https://raspberrypi.github.io/pico-sdk-doxygen/).
