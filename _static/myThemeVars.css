@@ -1,0 +1,14 @@
+/* This is the text color scheme which is a bit more contrasty than the default.
+Look at https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/styling.html */
+
+html {
+    --pst-color-wavedrom-orange: #ee9040;
+}
+
+html[data-theme="light"] {
+    --pst-color-wavedrom-text: rgb(0, 0, 0);
+}
+
+html[data-theme="dark"] {
+    --pst-color-wavedrom-text: rgb(255, 255, 255);
+}
