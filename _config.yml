@@ -67,7 +67,7 @@ sphinx:
     html_extra_path:
       - ./otherFiles/
     
-    # Add theme specific settings
-    html_theme_options:
-      pygment_light_style: tango
-      pygment_dark_style: monokai
+    # # Add theme specific settings
+    # html_theme_options:
+    #   pygment_light_style: tango
+    #   pygment_dark_style: monokai
