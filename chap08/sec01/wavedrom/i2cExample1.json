@@ -1,24 +1,21 @@
 {signal: [
     {
-        node: 'A..B...C...D...E...F...G...H...I...J...K..L',
+        node: 'A..BC.....D.....E.....F.....G.....H.....I.....J.....K.....L',
         period: 0.5,
     },
     {
         name: 'SDA',
-        wave: '10.........1.......0...................1...',
-        data: [
-            "7-bit Address",
-            "Read/Write",
-            "Ack/Nack"
-        ],
+        wave: '10..............1...........0.............................',
         period: 0.5
     },
     {
         name: 'SCL',
-        wave: '1.l.H.l.H.l.H.l.H.l.H.l.H.l.H.l.H.l.H.l.H..',
+        wave: '1..l..H..l..H..l..H..l..H..l..H..l..H..l..H..l..H..l..H..l',
         period: 0.5
     }
 ],
-edge: ['A<->B S', 'B<->I 7-bit Target Address', 'I<->J Write', 'J<->K Ack'
-]
+edge: ['A<->B S', 'C<->J 7-bit Target Address', 'J<->K Write', 'K<->L Ack'
+],
+config: {skin:'narrow'
+}
 }
