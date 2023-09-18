@@ -47,7 +47,7 @@ sphinx:
   config:
     # A custom wavedrom file is used because the right click menu causes issues with plotly
     offline_wavedrom_js_path: wavedrom/wavedrom.js
-    offline_skin_js_path: wavedrom/default.js
+    offline_skin_js_path: wavedrom/skins.js
 
     # Add MathJax related settings, necessary for it to work well with plotly.js
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
